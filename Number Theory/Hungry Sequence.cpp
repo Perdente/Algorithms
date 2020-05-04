@@ -1,4 +1,5 @@
 //Simple seive generate the prime numbers
+//https://codeforces.com/problemset/problem/327/B
 #include<bits/stdc++.h>
 using namespace std;
 const long long mod = 1e9+7;
