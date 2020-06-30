@@ -1,5 +1,6 @@
 //https://codeforces.com/problemset/problem/1016/B
-
+//KMP algorithm
+//pattern finding within the given range of substring
 #include<bits/stdc++.h>
 using namespace std;
 const long long mod = 1e9+7;
