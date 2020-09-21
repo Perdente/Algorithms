@@ -48,7 +48,7 @@ void update(int seg_si,int seg_str,int seg_end,int q_ind,int value)
 {
 	if(seg_str==seg_end)
 	{
-		seg[seg_si]=num[seg_str];return;
+		seg[seg_si]=value;return;
 	}
 	int mid=(seg_str+seg_end)/2;
 	
