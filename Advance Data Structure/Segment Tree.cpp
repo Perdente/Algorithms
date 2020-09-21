@@ -1,3 +1,4 @@
+
 /* * A segment tree is a tree data structure for storing intervals, or segments. It allows 
  * for faster querying (e.g sum or min) in these intervals. Lazy propagation is useful
  * when there are high number of updates in the input array.
@@ -15,54 +16,60 @@
  * Time complexity to update in segment tree is O(logn)
  * Time complexity to update range in segment tree is O(range)
  * */
+ 
 #include<bits/stdc++.h>
 using namespace std;
 int num[]={4,1,2,3};
-int arr_min[4*sizeof(num)]={};
-void bld_segtree(int pos,int low,int hi)
+int seg[4*sizeof(num)]={};
+
+void bld_segtree(int seg_si,int seg_str,int seg_end)
 {
-	if(low==hi)
+	if(seg_str==seg_end)
 	{
-		arr_min[pos]=num[low];return ;
+		seg[seg_si]=num[seg_str];return ;
 	}
-	int mid=(low + hi)/2;
-	bld_segtree(2*pos+1,low,mid);//recurse on the left child
-	bld_segtree(2*pos+2,mid+1,hi);//recurse on the right child
-	arr_min[pos]=min(arr_min[2*pos+1],arr_min[2*pos+2]);
+	int mid=(seg_str + seg_end)/2;
+	bld_segtree(2*seg_si+1,seg_str,mid);//recurse on the left child
+	bld_segtree(2*seg_si+2,mid+1,seg_end);//recurse on the right child
+	seg[seg_si]=min(seg[2*seg_si+1],seg[2*seg_si+2]);
 }
-int query(int pos,int L,int R,int low,int hi)
+
+int query(int seg_si,int seg_str,int seg_end,int q_str,int q_end)
 {
-	if(L>hi or R<low)return INT_MAX;
-	if(L>=low and R<=hi)return arr_min[pos];
-	int mid=(L+R)/2;
-	int x=query(2*pos+1,L,mid,low,hi);
-	int y=query(2*pos+2,mid+1,R,low,hi);
+	if(seg_str>q_end or seg_end<q_str)return INT_MAX;
+	if(seg_str>=q_str and seg_end<=q_end)return seg[seg_si];
+	int mid=(seg_str+seg_end)/2;
+	int x=query(2*seg_si+1,seg_str,mid,q_str,q_end);
+	int y=query(2*seg_si+2,mid+1,seg_end,q_str,q_end);
 	return min(x,y);
 }
-void update(int at,int L,int R,int pos,int value)
+
+void update(int seg_si,int seg_str,int seg_end,int q_ind,int value)
 {
-	if(L==R)
+	if(seg_str==seg_end)
 	{
-		arr_min[at]=value;return ;
+		seg[seg_si]=num[seg_str];return;
 	}
-	int mid=(L+R)/2;
-	if(pos<=mid)update(2*at+1,L,mid,pos,value);
-	else update(2*at+2,mid+1,R,pos,value);
-	arr_min[at]=min(arr_min[2*at+1],arr_min[2*at+2]);
+	int mid=(seg_str+seg_end)/2;
+	
+	if(q_ind<=mid)update(2*seg_si+1,seg_str,mid,q_ind,value);
+	else update(2*seg_si+2,mid+1,seg_end,q_ind,value);
+	
+	seg[seg_si]=min(seg[2*seg_si+1],seg[2*seg_si+2]);
 }
 int main()
 {
 	bld_segtree(0,0,3);//from root = 0 we construct from index 0 to index 3 segment tree in arr_min[]
 	for(int i=0;i<sizeof(num);++i)
 	{
-		cout<<arr_min[i]<<" ";
+		cout<<seg[i]<<" ";
 	}
 	cout<<endl;
 	cout<<query(0,0,3,1,2)<<endl;
 	update(0,0,3,2,-1);
 	for(int i=0;i<sizeof(num);++i)
 	{
-		cout<<arr_min[i]<<" ";
+		cout<<seg[i]<<" ";
 	}
 	cout<<endl;
 	cout<<query(0,0,3,0,3)<<endl;
