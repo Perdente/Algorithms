@@ -1,5 +1,5 @@
 //spoj - power of matrix
-
+//https://www.spoj.com/problems/MPOW/
 //https://www.hackerearth.com/practice/notes/matrix-exponentiation-1/
 #include<bits/stdc++.h>
 ///ordered set
