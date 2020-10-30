@@ -1,6 +1,7 @@
 /*Every winner is a loser he just tried one last time*/
 //The number of common divisors in an array.
 //https://codeforces.com/problemset/problem/1203/C
+//https://www.geeksforgeeks.org/common-divisors-of-n-numbers/
 #include<bits/stdc++.h>
 using namespace std;
 const long long mod = 1e9+7;
