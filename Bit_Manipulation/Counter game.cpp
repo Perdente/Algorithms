@@ -97,7 +97,7 @@ void SectumSempra()
 			n>>=1;
 		}else{
 			temp=(ll)log2(n);
-			n-=(ll)pow(2,temp);
+			n-=(1LL<<temp);
 		}
 		cnt++;
 	}
