@@ -11,7 +11,20 @@ void Malena(){
     }
     int x=64-(__builtin_popcountll(n)+__builtin_clzll(n));
     cout<<(1LL<<x);
-
+    /*
+    int n,b;cin>>n;
+    for(int i=63;i>=0;--i){
+        if(n & (1LL<<i))
+        {
+            b=i;break;
+        }
+    }
+    int cnt=0;
+    for(int mask=0;mask<b;++mask){
+        if((n & (1LL<<mask))==0)cnt++;
+    }
+    cout<<(1LL<<cnt)<<'\n';
+    */
 }
 
 signed main()
