@@ -1,3 +1,4 @@
+//https://cp-algorithms.com/others/maximum_average_segment.html
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long int
