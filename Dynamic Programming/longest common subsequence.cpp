@@ -13,7 +13,7 @@ int LCS_len(string m,string n,int M,int N)
 		{
 			if(m[i-1]==n[j-1])
 			{
-				lookup[i][j]=lookup[i-1][j]+1;
+				lookup[i][j]=lookup[i-1][j-1]+1;
 			}
 			else
 			{
