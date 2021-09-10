@@ -35,7 +35,8 @@ void PrimeFactorization(int n){
 	if(n>1)prime_factors.push_back(n);
 }
 ```
-### Number of Divisors (using sieve) _O(mx log(log mx))_
+### Number of Divisors
+> using sieve _O(mx log(log mx))_
 ```C++
 vector<bool> isPrime(mx,true);
 vector<int> primes;
@@ -76,7 +77,7 @@ int num_div(int n){
   return ans;
 }
 ```
-### Number of Divisors _O(sqrt(n))_
+> Fast calculation _O(sqrt(n))_
 ```C++
 int num_div(int n){
 	int cnt=0;
@@ -89,7 +90,8 @@ int num_div(int n){
 	return cnt;
 }
 ```
-### Sum of Divisors (using Sieve)_O(mx log(log mx))_
+### Sum of Divisors 
+> using Sieve _O(mx log(log mx))_
 ```C++
 vector<bool> isPrime(mx,true);
 vector<int> primes;
@@ -121,7 +123,7 @@ int sum_div(int n){
   return res;
 }
 ```
-### Sum of Divisors (from StackOverflow)
+> (from StackOverflow)
 ```C++
 int sumDivisorsOfDivisors(int n) 
 { 
