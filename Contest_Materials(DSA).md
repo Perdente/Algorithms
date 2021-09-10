@@ -156,6 +156,82 @@ while(m--){
     }
 }
 ```
+# SQRT Decomposition/MO's Algorithm
+> find the distinct elements _[l,r]_
+```c++
+
+#define N 311111
+#define A 1111111
+
+
+int cnt[A], a[N], ans[N], answer = 0;
+int BLOCK;
+struct node {
+	int L, R, i;
+}query[N];
+
+bool cmp(node x, node y) {
+	if(x.L/BLOCK != y.L/BLOCK) {
+		// different blocks, so sort by block.
+		return x.L/BLOCK < y.L/BLOCK;
+	}
+	// same block, so sort by R value
+	return x.R < y.R;
+}
+
+void add(int position) {
+	cnt[a[position]]++;
+	if(cnt[a[position]] == 1) {
+		answer++;
+	}
+}
+
+void remove(int position) {
+	cnt[a[position]]--;
+	if(cnt[a[position]] == 0) {
+		answer--;
+	}
+}
+int main(){
+int n;
+	cin>>n;
+	BLOCK=sqrt(n);
+	
+	for(int i=0; i<n; i++)
+		cin>>a[i];
+
+	int m;
+	cin>>m;
+	for(int i=0; i<m; i++) {
+		cin>>query[i].L>>query[i].R;
+		query[i].L--; query[i].R--;
+		query[i].i = i;
+	}
+
+	sort(query, query + m, cmp);
+
+	int currentL = 0, currentR = 0;
+	for(int i=0; i<m; i++) {
+		int L = query[i].L, R = query[i].R;
+		while(currentL < L) {
+			remove(currentL++);
+		}
+		while(currentL > L) {
+			add(currentL-1);currentL--;
+		}
+		while(currentR <= R) {
+			add(currentR++);
+		}
+		while(currentR > R+1) {
+			remove(currentR-1);currentR--;
+		}
+		ans[query[i].i] = answer;
+	}
+
+	for(int i=0; i<m; i++)
+		cout<<ans[i]<<"\n";
+}
+```
 # DSU
 ```c++
 const int N=3e5+5;
