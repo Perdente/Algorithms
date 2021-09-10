@@ -264,3 +264,18 @@ ordered_multiset os;
 int x=os.order_of_key(k);
 int x=*(os.find_by_order(k));
 ```
+> Upper_bound & Lower_bound
+```c++
+auto upper_bound=[&](int element)->int{
+ int pos=os.order_of_key(element+1);
+ if(pos==os.size()) return -1;
+ else{
+  return *(os.find_by_order(pos));
+ }
+};
+auto lower_bound=[&](int element)->int{
+ int pos=os.order_of_key(element);
+ if(pos==os.size()) return -1;
+ else return *(os.find_by_order(pos));
+};
+```
