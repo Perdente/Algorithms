@@ -223,6 +223,7 @@ int binpow(int a,int b,int m)
 }
 ```
 ### ncr 
+> without **mod**
 ```C++
 int ncr(int n,int k) {
     double res = 1;
@@ -232,8 +233,7 @@ int ncr(int n,int k) {
 }
 ```
 
-### ncr % MOD
-
+> with **mod**_(1e9+7)_
 ```C++
 const int N=1e6,MOD=1e9+7;
 int fact[N];
