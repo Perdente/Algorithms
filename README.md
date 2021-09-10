@@ -16,3 +16,10 @@
 - [Euler Totient Function](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#euler-totient-functionphi-function-osqrtn "Counts the number of integers 1 to n which are coprime to n.")
 - [Binary Exponentiation](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#binary-exponentiation "calculate a^b with mod or without")
 - [Binary Coefficient/NCR](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#ncr "calculate nCr with mod or without")
+
+### Graph & Tree
+
+- [DFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dfs "Connected Components,Bipartite Coloring,Cycle Detection")
+- [BFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs "normal_bfs,bfs on grid")
+- [Dijsktra's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dijsktras-algorithm "shortest path")
+- [Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#tree "Subordinate of nodes,Tree Diameter,LCA(binary lifting)")
