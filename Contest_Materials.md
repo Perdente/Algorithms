@@ -210,23 +210,18 @@ int binpow(int a,int b)
 ```
 > with **mod**_(1e9+7)_
 ```C++
-int binpow(int a,int b)
+int binpow(int a,int b,int m)
 {
-	int res=1;
-	while(b>0)
+	int res=1;a%=m;
+	while(b)
 	{
-		if(b%2)res=(res*1LL*a)%MOD;
-		a=(a*1LL*a)%MOD;
+		if(b%2)res=(res*a)%m;
+		a=(a*a)%m;
 		b>>=1LL;
 	}
-	return (res%MOD);
+	return (res%m);
 }
 ```
-### Bigmod 
-```C++
-
-```
-
 ### ncr 
 ```C++
 int ncr(int n,int k) {
