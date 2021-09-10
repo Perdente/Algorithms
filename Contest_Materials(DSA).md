@@ -250,3 +250,17 @@ while(r>l+1){
 }
 cout<<r<<endl;
 ```
+# Ordered Set _O(log(n))_
+> - _order_of_key(k)_ : Number of item strictly smaller than k
+> - _find_by_order(k)_ : kth element in a set (counting from 0)
+```c++
+#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/tree_policy.hpp> 
+using namespace __gnu_pbds; 
+#define ordered_multiset tree<int, null_type,less_equal<int>, rb_tree_tag,tree_order_statistics_node_update> 
+#define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update> 
+
+ordered_multiset os;
+int x=os.order_of_key(k);
+int x=*(os.find_by_order(k));
+```
