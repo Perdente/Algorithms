@@ -222,6 +222,11 @@ int binpow(int a,int b)
 	return (res%MOD);
 }
 ```
+### Bigmod 
+```C++
+
+```
+
 ### ncr 
 ```C++
 int ncr(int n,int k) {
