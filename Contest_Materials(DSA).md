@@ -231,3 +231,23 @@ class DSU{
 int n;cin>>n;
 DSU dsu(n);
 ```
+# Binary Search
+### bs on answer
+> - Search the result between _[l,r]_
+> - Initially **l** is bad(most of the cases) and **r** is good.
+> - **l** is some value/index which can never be the answer and **r** is some value/index which always gives the answer
+> - _good(m)_ function determines which element is good or bad.
+```c++
+auto good=[&](int m){
+
+};
+l=0,r=1e10;
+int l=0; // l is bad 
+int r=1e6;// r is good
+while(r>l+1){
+ int m=l+(r-l)/2;
+    if(good(m)) r=m;
+    else l=m;
+}
+cout<<r<<endl;
+```
