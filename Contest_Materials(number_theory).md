@@ -237,7 +237,7 @@ int ncr(int n,int k) {
 
 > with **mod**_(1e9+7)_
 ```C++
-const int N=1e6,MOD=1e9+7;
+const int mx=1e6,MOD=1e9+7;
 int fact[N];
 
 int binpow(int a,int b)
@@ -261,7 +261,7 @@ int ncr(int n,int k){
 }
 
 fact[0]=fact[1]=1;
-for(int i=2;i<N;++i)fact[i]=(fact[i-1]*1LL*i)%MOD;
+for(int i=2;i<mx;++i)fact[i]=(fact[i-1]*1LL*i)%MOD;
 
 ```
 
