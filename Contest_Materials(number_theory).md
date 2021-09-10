@@ -238,7 +238,7 @@ int ncr(int n,int k) {
 > with **mod**_(1e9+7)_
 ```C++
 const int mx=1e6,MOD=1e9+7;
-int fact[N];
+int fact[mx];
 
 int binpow(int a,int b)
 {
