@@ -241,7 +241,6 @@ DSU dsu(n);
 auto good=[&](int m){
 
 };
-l=0,r=1e10;
 int l=0; // l is bad 
 int r=1e6;// r is good
 while(r>l+1){
