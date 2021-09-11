@@ -308,7 +308,7 @@ int n;cin>>n;
 DSU dsu(n);
 ```
 # Binary Search
-### binary search on answer
+### Binary search on answer
 > - Search the result between _[l,r]_
 > - Initially **l** is bad(most of the cases) and **r** is good.
 > - **l** is some value/index which can never be the answer and **r** is some value/index which always gives the answer
