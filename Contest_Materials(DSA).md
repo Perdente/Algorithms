@@ -1,4 +1,5 @@
-# Segment Tree
+# Data Structure
+### Segment Tree
 >Seg-Sum
 ```c++
 const int N=1e5+6,mod=1e9+7;
@@ -156,7 +157,7 @@ while(m--){
     }
 }
 ```
-# SQRT Decomposition/MO's Algorithm
+### SQRT Decomposition/MO's Algorithm
 > find the distinct elements _[l,r]_
 ```c++
 
@@ -232,7 +233,7 @@ int n;
 		cout<<ans[i]<<"\n";
 }
 ```
-# DSU
+### DSU
 ```c++
 const int N=3e5+5;
 class DSU{
@@ -307,8 +308,8 @@ class DSU{
 int n;cin>>n;
 DSU dsu(n);
 ```
-# Binary Search
-### Binary search on answer
+### Binary Search
+#### Binary search on answer
 > - Search the result between _[l,r]_
 > - Initially **l** is bad(most of the cases) and **r** is good.
 > - **l** is some value/index which can never be the answer and **r** is some value/index which always gives the answer
@@ -326,7 +327,7 @@ while(r>l+1){
 }
 cout<<r<<endl;
 ```
-# Ordered Set _O(log(n))_
+### Ordered Set _O(log(n))_
 > - _order_of_key(k)_ : Number of item strictly smaller than k
 > - _find_by_order(k)_ : kth element in a set (counting from 0)
 ```c++
