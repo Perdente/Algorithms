@@ -4,7 +4,7 @@
 - [SQRT Decomposition](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#sqrt-decompositionmos-algorithm "MO's algorithm")
 - [DSU](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#dsu)
 - [Binary Search](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#binary-search "bs on ans")
-- [Ordered Set](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#ordered-set-ologn)
+- [Ordered Set](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#ordered-set-ologn "policy based data structure")
 - [Kadene's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#kadens-algorithm "maximum sub-array sum")
 
 ### Number Theory
