@@ -356,3 +356,22 @@ auto lower_bound=[&](int element)->int{
  else return *(os.find_by_order(pos));
 };
 ```
+# Algorithms
+### Kaden's Algorithm
+>Given an array of n elements. Find maximum sum of contiguous non-empty subarray.
+>[-1,(3,-2,5,3),-5,2,2]=9
+```c++
+int mx_so_far=INT_MIN;// stores max sub-sum so far
+int mx_end_here=0;// stores max sub-sum ending at current pos
+for(int i=0;i<n;++i){
+	mx_end_here+=v[i];
+	// update the maximum sum of sub-array "ending" at index `i` (by adding the
+	//current element to maximum sum ending at previous index `i-1`)
+	mx_end_here=max(mx_end_here,0LL);
+	// if the maximum sum is negative, set it to 0 (which represents
+	// an empty subarray)
+	mx_so_far=max(mx_so_far,mx_end_here);
+	// update the result if the current subarray sum is found to be greater
+}
+cout<<mx_so_far<<endl;
+```
