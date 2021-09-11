@@ -12,13 +12,19 @@ bool isPrime(int n){
 
 ### Sieve of Eratosthenes _O(mx log(log mx))_
 ```C++
-vector<bool> isPrime(mx,true);
+vector<bool> isPrime(mx+1,true);
+vector<int> primes;
 void Sieve(){
 	isPrime[0]=isPrime[1]=false;
+	int sq=sqrt(mx);
 	for(int i=2;i<=mx;++i){
 		if(isPrime[i] and (i*i)<=mx){
+			primes.push_back(i);
 			for(int j=i*i;j<=mx;j+=i) isPrime[j]=false;
 		}
+	}
+	for(int i=sq+1;i<=mx;++i){
+		if(isPrime[i])primes.push_back(i);
 	}
 }
 ```
