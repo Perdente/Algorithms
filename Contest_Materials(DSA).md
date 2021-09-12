@@ -235,7 +235,6 @@ int n;
 ```
 ### DSU
 ```c++
-const int N=3e5+5;
 class DSU{
     vector <int> parent, rank, minimum, maximum, total_elements;
     
@@ -305,8 +304,7 @@ class DSU{
             return maximum[find_parent(v)];
         }
 };
-int n;cin>>n;
-DSU dsu(n);
+//DSU dsu(n);
 ```
 ### Binary Search
 #### Binary search on answer
