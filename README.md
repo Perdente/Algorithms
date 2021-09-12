@@ -24,3 +24,6 @@
 - [BFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs "normal_bfs,bfs on grid")
 - [Dijsktra's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dijsktras-algorithm "shortest path")
 - [Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#tree "Subordinate of nodes,Tree Diameter,LCA(binary lifting)")
+
+### Miscellaneous
+- [Rotation of Matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
