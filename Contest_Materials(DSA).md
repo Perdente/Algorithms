@@ -236,7 +236,7 @@ int n;
 ### DSU
 ```c++
 class DSU{
-    vector <int> parent, rank, minimum, maximum, total_elements;
+    vector <int> parent, _rank, minimum, maximum, total_elements;
     
     public:
         DSU(int n){
@@ -244,7 +244,7 @@ class DSU{
             minimum.resize(n + 1);
             maximum.resize(n + 1);
             total_elements.assign(n + 1, 1);
-            rank.assign(n + 1, 0);
+            _rank.assign(n + 1, 0);
             initialize(n);
         }
  
@@ -261,12 +261,12 @@ class DSU{
             return parent[element] = find_parent(parent[element]);
         }
         
-        void union_by_rank(int a, int b){
+        void union_by__rank(int a, int b){
             int pa = find_parent(a);
             int pb = find_parent(b);
             if(pa == pb) return;
-            if(rank[pa] == rank[pb]) ++rank[pa];
-            if(rank[pa] > rank[pb]){
+            if(_rank[pa] == _rank[pb]) ++_rank[pa];
+            if(_rank[pa] > _rank[pb]){
                 parent[pb] = pa;
                 total_elements[pa] += total_elements[pb];
                 minimum[pa] = min(minimum[pa], minimum[pb]);
