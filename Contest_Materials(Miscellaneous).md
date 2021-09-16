@@ -22,3 +22,41 @@
     }
   };
 ```
+# Array
+### Nearest non-zero value in circular array
+```c++
+V v(2*n);
+lp(i,2*n){
+  if(i<n){
+    cin>>v[i];	
+  }else{
+    v[i]=v[i-n];	
+  }
+}
+V ind; // stores the indices of non-zero elements
+lp(i,2*n){
+  if(v[i])ind.pb(i);
+}
+lp(i,n){
+  int j=upper_bound(all(ind),i)-ind.begin(); 
+  int j1=upper_bound(all(ind),i+n)-ind.begin();
+  int t;// stores min distance for i+1 to n-1 index
+  int t1;// stores min distance for i-1 to 0 index
+  if(j==0){
+    t=ind[j]-i;// check for righ indices
+  }else if(j==sz(ind)){
+    t=i-ind[j-1];// check for left indices
+  }else{
+    t=min(i-ind[j-1],ind[j]-i);
+  }
+  if(j1==0){
+    t1=ind[j1]-(i+n);
+  }else if(j1==sz(ind)){
+    t1=(i+n)-ind[j1-1];
+  }else{
+    t1=min(i+n-ind[j1-1],ind[j1]-i-n);
+  }
+
+  t=min(t,t1); // nearest distance for each non-zero array element
+}
+```
