@@ -28,3 +28,4 @@
 
 ### Miscellaneous
 - [Rotation of Matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
+- [Nearest non-zero value in circular array](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#nearest-non-zero-value-in-circular-array)
