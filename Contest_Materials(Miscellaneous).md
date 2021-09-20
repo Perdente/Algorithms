@@ -61,3 +61,28 @@ lp(i,n){
   t=min(t,t1); // nearest distance for each non-zero array element
 }
 ```
+### next greater element in an array
+```c++
+cin>>n;
+V v(n);
+lp(i,n){
+  cin>>v[i];
+}
+stack<int> st;
+st.push(v[0]);
+lp1(i,1,n-1){
+  if(st.empty()){
+    st.push(v[i]);
+    continue;
+  }
+  while(!st.empty() and st.top()>v[i]){
+    debug(v[i]);
+    st.pop();
+  }
+  st.push(v[i]);
+}
+while(!st.empty()){
+  cout<<-1<<endl;
+  st.pop();
+}
+```
