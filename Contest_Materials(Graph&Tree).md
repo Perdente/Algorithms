@@ -101,22 +101,20 @@ while(m--){
 }
 vector<int>dis(n+1);
 vector<bool>vis(n+1);
-auto bfs=[&](int s){
-  queue<int>q;
-  q.push(s);
-  vis[s]=true;
-  dis[s]=0;
-  while(!q.empty()){
-    int u=q.front();
-    q.pop();
-    for(auto v:adj[u]){
-      if(!vis[v]){
-        vis[v]=true;
-        dis[v]=1+dis[u];
-        q.push(v);
-      }
-    }
-  }
+auto bfs=[&](int snode){
+	fill(vis.begin(), vis.end(),false);
+	queue<int> q;
+	q.push(snode);
+	while(!q.empty()){
+		int u=q.front();
+		q.pop();
+		if(vis[u])continue;
+		vis[u]=true;
+		for(auto v:edges[u]){
+			if(vis[v])continue;
+			q.push(v);
+		}
+	}
 };
 bfs(1);
 ```
