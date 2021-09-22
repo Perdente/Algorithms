@@ -1,4 +1,49 @@
 # Graph
+```c++
+struct graph{
+	int n;
+	vector<bool> vis;
+	vector<int> color;
+	vector<vector<int>> edges;
+	void init(int size){
+		n=size();
+		edges.resize(n);
+		vis.resize(n);
+	}
+	void read(int tot_edges,bool isUnDirected){
+		for(int i=0;i<tot_edges;++i){
+			int u,v;cin>>u>>v;u--,v--;
+			edges[u].push_back(v);
+			if(isUnDirected) edges[v].push_back(u);
+		}
+	}
+	void bfs(int snode){
+		fill(vis.begin(), vis.end(),false);
+		queue<int> q;
+		q.push(snode);
+		while(!q.empty()){
+			int u=q.front();
+			q.pop();
+			if(vis[u])continue;
+			vis[u]=true;
+			for(auto v:edges[u]){
+				if(vis[v])continue;
+				q.push(v);
+			}
+		}
+	}
+	void dfs(int snode){
+		vis[snode]=true;
+		for(auto v:edges[snode]){
+			if(!vis[v]){
+				vis[v]=true;
+				dfs(v);
+			}
+		}
+	}
+};
+
+```
 ### DFS
 >Connected Components
 ```c++
