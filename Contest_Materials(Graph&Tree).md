@@ -138,28 +138,30 @@ cout<<cnt<<"\n";
 ```
 ### BFS
 ```c++
-vector<int>adj[n+1];
+vector<int>edges[n+1];
 while(m--){
-  int u,v;cin>>u>>v;
-  adj[u].push_back(v);
-  adj[v].push_back(u);
+int u,v;cin>>u>>v;
+edges[u].push_back(v);
+edges[v].push_back(u);
 }
 vector<int>dis(n+1);
 vector<bool>vis(n+1);
 auto bfs=[&](int snode){
-	fill(vis.begin(), vis.end(),false);
-	queue<int> q;
-	q.push(snode);
-	while(!q.empty()){
-		int u=q.front();
-		q.pop();
-		if(vis[u])continue;
-		vis[u]=true;
-		for(auto v:edges[u]){
-			if(vis[v])continue;
-			q.push(v);
-		}
-	}
+fill(vis.begin(), vis.end(),false);
+fill(dis.begin(), dis.end(),-1);
+queue<int> q;
+q.push(snode);dis[snode]=0;
+while(!q.empty()){
+    int u=q.front();
+    q.pop();
+    if(vis[u])continue;
+    vis[u]=true;
+    for(auto v:edges[u]){
+	if(vis[v])continue;
+	dis[v]=dis[u]+1;
+	q.push(v);
+    }
+}
 };
 bfs(1);
 ```
