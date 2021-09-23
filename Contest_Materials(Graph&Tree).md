@@ -245,6 +245,36 @@ while(q--){
   cout<<Dijsktra(mp[start],mp[end])<<'\n';
 }
 ```
+# TopSort
+```c++
+int n,m;cin>>n>>m;
+vector<int> adj[n+1],indegree(n+1),outdegree(n+1);
+vector<bool> vis(n+1);
+for(int i=0;i<m;++i){
+	int u,v;cin>>u>>v;
+	adj[u].push_back(v);
+	outdegree[u]++;
+	indegree[v]++;
+}
+vector<int> tops;
+auto top_sort=[&](int u){
+	for(int i=1;i<=n;++i){
+		if(!indegree[i] and outdegree[i])tops.push_back(i);
+	}
+	for(int i=0;i<tops.size();++i){
+		int u=tops[i];
+		for(auto v:adj[u]){
+		    indegree[v]--;
+		    if(indegree[v]==0)tops.push_back(v);
+		}
+	}	
+};
+top_sort(n);
+for(auto i:tops){
+	cout<<i<<" ";
+}
+```
+
 # Tree
 
 >Subordinate of nodes
