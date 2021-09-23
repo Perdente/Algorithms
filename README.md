@@ -23,6 +23,7 @@
 - [DFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dfs "Connected Components,Bipartite Coloring,Cycle Detection")
 - [BFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs "normal_bfs,bfs on grid")
 - [Dijsktra's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dijsktras-algorithm "shortest path")
+- [TopSort](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#topsort "Khan's algo")
 - [Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#tree "Subordinate of nodes,Tree Diameter,LCA(binary lifting)")
 - [Kruskal's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#kruskals-algorithm-om-log-n "minimum spanning tree")
 
