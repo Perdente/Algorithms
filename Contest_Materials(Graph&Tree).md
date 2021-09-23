@@ -245,7 +245,7 @@ while(q--){
   cout<<Dijsktra(mp[start],mp[end])<<'\n';
 }
 ```
-# TopSort
+### TopSort
 ```c++
 int n,m;cin>>n>>m;
 vector<int> adj[n+1],indegree(n+1),outdegree(n+1);
