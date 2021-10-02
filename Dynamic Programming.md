@@ -12,18 +12,20 @@ For example, if n=3, there are 4 ways:
 <ul>
   
 ```c++
-int n;cin>>n;
-int dp[n+1];
-memset(dp,0,sizeof(dp));
+int sum;cin>>sum;
+vector<int> dice(6);
+iota(dice.begin(), dice.end(),1);
+vector<int> dp(sum+1);
 dp[0]=1;
-for(int i=1;i<=n;++i)
-{
-  for(int x=1;x<=6;++x)
-  {
-    if(i-x>=0)dp[i]+=dp[i-x],dp[i]%=mod;
-  }
+for(int i=1;i<=sum;++i){
+    for(int j:dice){
+        if(i-j>=0){
+            dp[i]+=dp[i-j];
+            dp[i]%=mod;
+        }
+    }
 }
-cout<<dp[n]<<endl;
+cout<<dp[sum]<<'\n';
 ```
 </ul>
 </details>
@@ -39,25 +41,19 @@ cout<<dp[n]<<endl;
 <ul>
   
 ```c++
-int n,sum;
-cin>>n>>sum;
-vector<int>v(n);
-for(int &i:v)cin>>i;
-vector<int>dp(sum+1,1e9);
+int n,sum;cin>>n>>sum;
+vector<int> vec(n);
+for(int &i:vec)cin>>i;
+vector<int> dp(sum+1,1e9);
 dp[0]=0;
-for(int j=1;j<=sum;++j)
-{
-  for(int i=1;i<=n;++i)
-  {
-    if(j-v[i-1]>=0)
-    {
-      dp[j]=min(dp[j],1+dp[j-v[i-1]]);
-      dp[j]%=mod;
+for(int i=1;i<=sum;++i){
+    for(int j:vec){
+        if(i-j>=0){
+            dp[i]=min(dp[i],1+dp[i-j]);
+        }
     }
-  }
 }
-if(dp[sum]==1e9)return cout<<-1<<endl,0;
-cout<<dp[sum]<<endl;
+cout<<(dp[sum]==1e9?-1:dp[sum])<<'\n';
 ```
 </ul>
 </details>
