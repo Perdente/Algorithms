@@ -31,7 +31,7 @@ cout<<dp[n]<<endl;
 
 ### Minimizing Coin
 
->Your task is to produce a sum of money x using the available coins in such a way that the number of coins is minimal.
+>Your task is to produce a sum of money x using the available coins in such a way that **the number of coins** is minimal.
 >For example, if the coins are {1,5,7} and the desired sum is 11, an optimal solution is 5+5+1 which requires 3 coins.
 
 <details>
