@@ -127,4 +127,39 @@ cout<<dp[n][tot]<<endl;
 </details>
 <br/>
   
+# Longest Common Subsequence
+> Given two string s and t. You need to find the longest common subsequence bt them
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+
+int LCS[N][N];
+void lcs_len(string s,string t,int n,int m){
+    for(int i=1;i<=n;++i){
+        for(int j=1;j<=m;++j){
+            if(s[i-1]==t[j-1]){
+                LCS[i][j]=LCS[i-1][j-1]+1;
+            }else{
+                LCS[i][j]=max(LCS[i-1][j],LCS[i][j-1]);
+            }
+        }
+    }
+}
+string lcs_str(string s,string t,int n,int m){
+    if(n==0 or m==0) return string("");
+    if(s[n-1]==t[m-1]) return lcs_str(s,t,n-1,m-1) + s[n-1];
+    if(LCS[n-1][m]>LCS[n][m-1]) return lcs_str(s,t,n-1,m);
+    return lcs_str(s,t,n,m-1);
+}
+string s,t;cin>>s>>t;
+int n=s.size(),m=t.size();
+lcs_len(s,t,n,m);
+cout<<lcs_str(s,t,n,m)<<endl;
+```
+</ul>
+</details>
+<br/>  
+  
   
