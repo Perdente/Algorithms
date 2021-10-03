@@ -100,3 +100,31 @@ cout<<dp[sum]<<'\n';
 </ul>
 </details>
 <br/>
+  
+# Knapsack
+> You are in a book shop which sells n different books. You know the price and number of pages of each book.
+> You have decided that the total price of your purchases will be at most x. What is the maximum number of pages you can buy? You can buy each book at most once.
+
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+int n,tot;cin>>n>>tot;
+for(int i=1;i<=n;++i)cin>>cost[i];
+for(int i=1;i<=n;++i)cin>>pg[i];
+
+for(int i=1;i<=n;++i)
+{
+  for(int j=1;j<=tot;++j)
+  {
+    dp[i][j]=max(dp[i-1][j],(j-cost[i]>=0)?pg[i]+dp[i-1][j-cost[i]]:0);
+  }
+}
+cout<<dp[n][tot]<<endl;
+```
+</ul>
+</details>
+<br/>
+  
+  
