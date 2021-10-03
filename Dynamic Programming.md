@@ -183,33 +183,68 @@ cout<<lcs_str(s,t,n,m)<<endl;
 <br/>  
   
 # Longest Increasing Subsequence
-$\mathcal{O}(n^2)$
+ $\mathcal{O}(n^2)$
 <details>
 <summary>Code</summary>
 <ul>
   
 ```c++
-string s,t;cin>>s>>t;
-int n=s.size(),m=t.size();
-vector<vector<int>>dp(n+1,vector<int>(m+1,1e9));
-dp[0][0]=0;
-for(int i=0;i<=n;++i)
-{
-  for(int j=0;j<=m;++j)
-  {
-    if(i)  dp[i][j]=min(dp[i][j],dp[i-1][j]+1);
-  
-    if(j)  dp[i][j]=min(dp[i][j],dp[i][j-1]+1);
-  
-    if(i and j)   dp[i][j]=min(dp[i][j],dp[i-1][j-1]+(s[i-1]!=t[j-1]));
-  }
+int n;cin>>n;
+vector<int> v(n);
+for(int i=0;i<n;++i){
+    cin>>v[i];
 }
-cout<<dp[n][m]<<endl;
+vector<int> dp(n,1);
+for(int i=0;i<n;++i){
+    for(int j=0;j<i;++j){
+        if(v[j]<v[i]) dp[i] = max(dp[i], dp[j]+1);
+    }
+}
+int ans=INT_MIN;
+for(auto i:dp)ans=max(ans,i);
+cout<<ans<<'\n';
 ```
 </ul>
 </details>
 <br/>
 
+ $\mathcal{O}(nlogn)$
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+int n;cin>>n;
+vector<int> v(n);
+for(int i=0;i<n;++i){
+    cin>>v[i];
+}
+auto LIS=[&](vector<int> v)->int{
+    multiset<int> st;
+    for(auto i:v){
+        st.insert(i);
+        auto it=st.upper_bound(i);
+        if(it!=st.end()) st.erase(it);
+    }
+    return (int)st.size();
+};
+//Strictly longest increasing subsequence
+auto Strictly_LIS=[&](vector<int> v)->int{
+    multiset<int> st;
+    for(auto i:v){
+        st.insert(i);
+        auto it=st.lower_bound(i);
+        it++;
+        if(it!=st.end()) st.erase(it);
+    }
+    return (int)st.size();
+};
+
+cout<<Strictly_LIS(v)<<'\n';
+```
+</ul>
+</details>
+<br/>
 
 # Edit Distance
 >The edit distance between two strings is the minimum number of operations required to transform one string into the other.
