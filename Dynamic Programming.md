@@ -50,6 +50,26 @@ for(auto j:vec){
 }
 cout<<dp[sum]<<'\n';  
 ```
+  
+```c++
+/*
+  dp[i,x]=valid ways to make sum x using vec[0],vec[1],vec[2],...,vec[i]
+  Base case:  dp[i][0]=1; 0 <= i < n
+  Recurrence: dp[i][x]=dp[i-1][x] + dp[i][x-vec[i]]
+*/
+int n,sum;cin>>n>>sum;
+vector<int> vec(n+1);
+for(int i=1;i<=n;++i)cin>>vec[i];
+vector<vector<int>> dp(n+1,vector<int>(sum+1));
+for(int i=1;i<=n;++i)dp[i][0]=1;
+for(int i=1;i<=n;++i){
+    for(int x=1;x<=sum;++x){
+        dp[i][x]= dp[i-1][x] + (x-vec[i]>=0? dp[i][x-vec[i]] : 0);
+        dp[i][x]%=mod;
+    }
+}
+cout<<dp[n][sum]<<'\n';
+```  
 </ul>
 </details>
 <br/>
