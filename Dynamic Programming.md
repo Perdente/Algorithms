@@ -2,8 +2,8 @@
 
 ### Minimizing Coin
 
->Your task is to produce a sum of money x using the available coins in such a way that **the number of coins** is minimal.
->For example, if the coins are {1,5,7} and the desired sum is 11, an optimal solution is 5+5+1 which requires 3 coins.
+>Your task is to produce a sum of money $x$ using the available coins in such a way that _the number of coins_ is minimal.
+>For example, if the coins are {$1,5,7$} and the desired sum is $11$, an optimal solution is $5+5+1$ which requires $3$ coins.
 
 <details>
 <summary>Code</summary>
@@ -30,8 +30,8 @@ cout<<(dp[sum]==1e9?-1:dp[sum])<<'\n';
   
 ### Ordered Way Sum
 
->Your task is to calculate the number of distinct ordered ways you can produce a money sum x using the available coins.
->For example, if the coins are {2,3,5} and the desired sum is 9, there are 3 ways: (2+2+5) ,(3+3+3) ,(2+2+2+3)
+>Your task is to calculate the number of _distinct ordered ways_ you can produce a money sum $x$ using the available coins.
+>For example, if the coins are {$2,3,5$} and the desired sum is $9$, there are $3$ ways: ($2+2+5$) ,($3+3+3$) ,($2+2+2+3$)
 
 <details>
 <summary>Code</summary>
@@ -76,9 +76,9 @@ cout<<dp[n][sum]<<'\n';
 
 ### Ordered & Unordered Way Sum
 
->Your task is to calculate the number of distinct ways you can produce a money sum x using the available coins.
->For example, if the coins are {2,3,5} and the desired sum is 9, there are 8 ways:
->(2+2+5),(2+5+2),(5+2+2),(3+3+3),(2+2+2+3),(2+2+3+2),(2+3+2+2),(3+2+2+2)
+>Your task is to calculate the number of distinct ways you can produce a money sum $x$ using the available coins.
+>For example, if the coins are {$2,3,5$} and the desired sum is $9$, there are $8$ ways:
+>($2+2+5$),($2+5+2$),($5+2+2$),($3+3+3$),($2+2+2+3$),($2+2+3+2$),($2+3+2+2$),($3+2+2+2$)
 
 <details>
 <summary>Code</summary>
@@ -102,8 +102,8 @@ cout<<dp[sum]<<'\n';
 <br/>
   
 # Knapsack
-> You are in a book shop which sells n different books. You know the price and number of pages of each book.
-> You have decided that the total price of your purchases will be at most x. What is the maximum number of pages you can buy? You can buy each book at most once.
+> You are in a book shop which sells $n$ different books. You know the price and number of pages of each book.
+> You have decided that the total price of your purchases will be at most $x$. What is the maximum number of pages you can buy? You can buy each book at most once.
 
 <details>
 <summary>Code</summary>
@@ -128,7 +128,7 @@ cout<<dp[n][tot]<<endl;
 <br/>
   
 # Longest Common Subsequence
-> Given two string s and t. You need to find the longest common subsequence bt them
+> Given two string $s$ and $t$. You need to find the longest common subsequence between them
 <details>
 <summary>Code</summary>
 <ul>
@@ -252,7 +252,7 @@ cout<<Strictly_LIS(v)<<'\n';
 - Add one character to the string.
 - Remove one character from the string.
 - Replace one character in the string.
->For example, the edit distance between LOVE and MOVIE is 2, because you can first replace L with M, and then add I.
+>For example, the edit distance between $LOVE$ and $MOVIE$ is $2$, because you can first replace $L$ with $M$, and then add $I$.
 <details>
 <summary>Code</summary>
 <ul>
