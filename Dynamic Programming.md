@@ -181,6 +181,35 @@ cout<<lcs_str(s,t,n,m)<<endl;
 </ul>
 </details>
 <br/>  
+  
+# Longest Increasing Subsequence
+$\mathcal{O}(n^2)$
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+string s,t;cin>>s>>t;
+int n=s.size(),m=t.size();
+vector<vector<int>>dp(n+1,vector<int>(m+1,1e9));
+dp[0][0]=0;
+for(int i=0;i<=n;++i)
+{
+  for(int j=0;j<=m;++j)
+  {
+    if(i)  dp[i][j]=min(dp[i][j],dp[i-1][j]+1);
+  
+    if(j)  dp[i][j]=min(dp[i][j],dp[i][j-1]+1);
+  
+    if(i and j)   dp[i][j]=min(dp[i][j],dp[i-1][j-1]+(s[i-1]!=t[j-1]));
+  }
+}
+cout<<dp[n][m]<<endl;
+```
+</ul>
+</details>
+<br/>
+
 
 # Edit Distance
 >The edit distance between two strings is the minimum number of operations required to transform one string into the other.
