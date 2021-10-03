@@ -147,6 +147,26 @@ void lcs_len(string s,string t,int n,int m){
         }
     }
 }
+set<string> print_all(string s,string t,int n,int m){
+    set<string> st;
+    if(n==0 or m==0){
+        st.insert("");
+        return st;
+    }
+    if(s[n-1] == t[m-1]){
+        set<string> temp= print_all(s,t,n-1,m-1);
+        for(string str:temp) st.insert(str+s[n-1]);
+    }else{
+        if(LCS[n-1][m]>=LCS[n][m-1]){
+            st=print_all(s,t,n-1,m);
+        }
+        if(LCS[n][m-1]>=LCS[n-1][m]){
+            set<string> temp=print_all(s,t,n,m-1);
+            st.insert(temp.begin(), temp.end());
+        }
+    }
+    return st;
+}
 string lcs_str(string s,string t,int n,int m){
     if(n==0 or m==0) return string("");
     if(s[n-1]==t[m-1]) return lcs_str(s,t,n-1,m-1) + s[n-1];
