@@ -309,6 +309,38 @@ int minPathSum(vector<vector<int>>& grid) {
 </details>
 <br/>
 
+> Consider an $n$×$m$ grid whose squares may have traps $$#$$.Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+int n,m;cin>>n>>m;
+vector<vector<int>> dp(n,vector<int>(m));
+vector<string> a(n);
+for(int i=0;i<n;++i){
+    cin>>a[i];
+}
+if(a[0][0]=='#')return cout<<0<<endl,0;
+dp[0][0]=1;
+for(int i=0;i<n;++i){
+    for(int j=0;j<m;++j){
+        if(a[i][j]=='.'){
+            if(i>0 and a[i-1][j]=='.'){
+                dp[i][j]+=dp[i-1][j];
+            }
+            if(j>0 and a[i][j-1]=='.'){
+                dp[i][j]+=dp[i][j-1];
+            }
+            dp[i][j]%=mod;
+        }
+    }
+}
+cout<<dp[n-1][m-1]<<endl;
+```
+</ul>
+</details>
+<br/>
 
   
   
