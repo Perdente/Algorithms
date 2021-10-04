@@ -279,6 +279,36 @@ cout<<dp[n][m]<<endl;
 </details>
 <br/>
 
+# Grid DP
+> Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+  
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/kHZXqcz/minpath.jpg" alt="minpath" border="0"></a>
+<details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+int minPathSum(vector<vector<int>>& grid) {
+    const int inf=1e9;
+    int H=grid.size();
+    int W=grid[0].size();
+    vector<vector<int>>dp(H,vector<int>(W));
+    for(int i=0;i<H;++i){
+        for(int j=0;j<W;++j){
+            if(i==0 and j==0){
+                dp[i][j]=grid[i][j];
+                continue;
+            }
+            dp[i][j] = grid[i][j] + min((i==0? inf:dp[i-1][j]) ,(j==0? inf:dp[i][j-1]) );
+        }
+    }
+    return dp[H-1][W-1];
+}
+```
+</ul>
+</details>
+<br/>
+
 
   
   
