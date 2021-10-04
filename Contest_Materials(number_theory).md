@@ -1,6 +1,6 @@
 # Number Theory
 
-### Primality Test _O(sqrt(n))_
+### Primality Test $\mathcal{O}(sqrt(n))$
 ```C++
 bool isPrime(int n){
 	if(n==1) return false;
@@ -10,7 +10,7 @@ bool isPrime(int n){
 }
 ```
 
-### Sieve of Eratosthenes _O(mx log(log mx))_
+### Sieve of Eratosthenes $\mathcal{O}(mx log(log (mx)))$
 ```C++
 vector<bool> isPrime(mx+1,true);
 vector<int> primes;
@@ -28,7 +28,7 @@ void Sieve(){
 	}
 }
 ```
-### Prime Factorization _O(sqrt(n))_
+### Prime Factorization $\mathcal{O}(sqrt(n))$
 ```C++
 vector<int> prime_factors;
 void PrimeFactorization(int n){
@@ -42,7 +42,7 @@ void PrimeFactorization(int n){
 }
 ```
 ### Number of Divisors
-> using sieve _O(mx log(log mx))_
+> using sieve $\mathcal{O}(mx log(log mx))$
 ```C++
 vector<bool> isPrime(mx,true);
 vector<int> primes;
@@ -83,7 +83,7 @@ int num_div(int n){
   return ans;
 }
 ```
-> Fast calculation _O(sqrt(n))_
+> Fast calculation $\mathcal{O}(sqrt(n))$
 ```C++
 int num_div(int n){
 	int cnt=0;
@@ -97,7 +97,7 @@ int num_div(int n){
 }
 ```
 ### Sum of Divisors 
-> using Sieve _O(mx log(log mx))_
+> using Sieve $\mathcal{O}(mx log(log mx))$
 ```C++
 vector<bool> isPrime(mx,true);
 vector<int> primes;
@@ -171,7 +171,7 @@ int sumDivisorsOfDivisors(int n)
     return ans; 
 } 
 ```
-### Print all Divisors _O(sqrt(n))_
+### Print all Divisors $\mathcal{O}(sqrt(n))$
 ```C++
 void Print_div(int n){
   set<int> st;
@@ -181,9 +181,9 @@ void Print_div(int n){
   for(auto it:st)cout<<it<<" ";
 }
 ```
-### Euler Totient Function/Phi Function _O(sqrt(n))_
-> Counts the number of integers 1 to n which are **coprime** to n.
-> Two numbers are **coprime** if their _gcd_ equals 1
+### Euler Totient Function/Phi Function $\mathcal{O}(sqrt(n))$
+> Counts the number of integers $1$ to $n$ which are **coprime** to $n$.
+> Two numbers are **coprime** if their _gcd_ equals $1$
 ```C++
 int Phi(int n){
 	int result=n;
@@ -216,7 +216,7 @@ int binpow(int a,int b)
 	return res;
 }
 ```
-> with **mod**_(1e9+7)_
+> with **mod**$(1e9+7)$
 ```C++
 int binpow(int a,int b,int m)
 {
@@ -241,7 +241,7 @@ int ncr(int n,int k) {
 }
 ```
 
-> with **mod**_(1e9+7)_
+> with **mod**$(1e9+7)$
 ```C++
 const int mx=1e6,MOD=1e9+7;
 int fact[mx];
