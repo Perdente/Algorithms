@@ -392,7 +392,7 @@ int n;cin>>n;
 	}
 }
 ```
-### Kruskal's Algorithm _O(m log n)_
+### Kruskal's Algorithm $\mathcal{O}(m log n)$
 > Minimum Spanning Tree
 > Input:
 ```
