@@ -27,6 +27,15 @@
 - [Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#tree "Subordinate of nodes,Tree Diameter,LCA(binary lifting)")
 - [Kruskal's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#kruskals-algorithm-om-log-n "minimum spanning tree")
 
+### Dynamic Programming
+- [Coin Change](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#coin-change)
+- [Knapsack](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#knapsack)
+- [Longest Common Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-common-subsequence)
+- [Longest Increasing Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-increasing-subsequence)
+- [Edit Distance](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#edit-distance)
+- [Grid DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#grid-dp)
+
+
 ### Miscellaneous
 - [Rotation of Matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
 - [Nearest non-zero value in circular array](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#nearest-non-zero-value-in-circular-array)
