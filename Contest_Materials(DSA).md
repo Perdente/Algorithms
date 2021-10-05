@@ -158,7 +158,7 @@ while(m--){
 }
 ```
 ### SQRT Decomposition/MO's Algorithm
-> find the distinct elements _[l,r]_
+> find the distinct elements $(l,r)$
 ```c++
 
 #define N 311111
@@ -308,10 +308,10 @@ class DSU{
 ```
 ### Binary Search
 #### Binary search on answer
-> - Search the result between _[l,r]_
-> - Initially **l** is bad(most of the cases) and **r** is good.
-> - **l** is some value/index which can never be the answer and **r** is some value/index which always gives the answer
-> - _good(m)_ function determines which element is good or bad.
+> - Search the result between $(l,r)$
+> - Initially $l$ is bad(most of the cases) and $r$ is good.
+> - $l$ is some value/index which can never be the answer and $r$ is some value/index which always gives the answer
+> - $good(m)$ function determines which element is good or bad.
 ```c++
 auto good=[&](int m){
 
@@ -326,8 +326,8 @@ while(r>l+1){
 cout<<r<<endl;
 ```
 ### Ordered Set _O(log(n))_
-> - _order_of_key(k)_ : Number of item strictly smaller than k
-> - _find_by_order(k)_ : kth element in a set (counting from 0)
+> - _order_of_key$(k)$_ : Number of item strictly smaller than $k$
+> - _find_by_order$(k)$_ : $k$th element in a set (counting from $0$)
 ```c++
 #include <ext/pb_ds/assoc_container.hpp> 
 #include <ext/pb_ds/tree_policy.hpp> 
@@ -356,7 +356,7 @@ auto lower_bound=[&](int element)->int{
 ```
 # Algorithms
 ### Kaden's Algorithm
->Given an array of n elements. Find maximum sum of contiguous non-empty subarray.
+>Given an array of $n$ elements. Find maximum sum of contiguous non-empty subarray.
 >[-1,(3,-2,5,3),-5,2,2]=9
 ```c++
 int mx_so_far=INT_MIN;// stores max sub-sum so far
