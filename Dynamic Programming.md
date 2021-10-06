@@ -26,7 +26,6 @@ cout<<(dp[sum]==1e9?-1:dp[sum])<<'\n';
 ```
 </ul>
 </details>
-<br/>
   
 ### Ordered Way Sum
 
@@ -72,7 +71,6 @@ cout<<dp[n][sum]<<'\n';
 ```  
 </ul>
 </details>
-<br/>
 
 ### Ordered & Unordered Way Sum
 
@@ -99,7 +97,6 @@ cout<<dp[sum]<<'\n';
 ```
 </ul>
 </details>
-<br/>
   
 # Knapsack
 > You are in a book shop which sells $n$ different books. You know the price and number of pages of each book.
@@ -125,7 +122,6 @@ cout<<dp[n][tot]<<endl;
 ```
 </ul>
 </details>
-<br/>
   
 # Longest Common Subsequence
 > Given two string $s$ and $t$. You need to find the longest common subsequence between them
@@ -180,7 +176,6 @@ cout<<lcs_str(s,t,n,m)<<endl;
 ```
 </ul>
 </details>
-<br/>  
   
 # Longest Increasing Subsequence
  $\mathcal{O}(n^2)$
@@ -206,7 +201,6 @@ cout<<ans<<'\n';
 ```
 </ul>
 </details>
-<br/>
 
  $\mathcal{O}(nlogn)$
 <details>
@@ -244,7 +238,6 @@ cout<<Strictly_LIS(v)<<'\n';
 ```
 </ul>
 </details>
-<br/>
 
 # Edit Distance
 >The edit distance between two strings is the minimum number of operations required to transform one string into the other.
@@ -277,7 +270,6 @@ cout<<dp[n][m]<<endl;
 ```
 </ul>
 </details>
-<br/>
 
 # Grid DP
 > Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
@@ -307,7 +299,6 @@ int minPathSum(vector<vector<int>>& grid) {
 ```
 </ul>
 </details>
-<br/>
 
 > Consider an $n$×$m$ grid whose squares may have traps $$#$$.Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
 <details>
@@ -340,7 +331,6 @@ cout<<dp[n-1][m-1]<<endl;
 ```
 </ul>
 </details>
-<br/>
 
   
   
