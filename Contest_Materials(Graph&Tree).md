@@ -337,7 +337,7 @@ dfs(y,0);
 cout<<mx_dis<<'\n';
 ```
 
->Lowest Common Ancestor using binary lifting
+>Lowest Common Ancestor using $binary$ $lifting$
 ```c++
 const int N = 10005;
 const int LOG = 14;
