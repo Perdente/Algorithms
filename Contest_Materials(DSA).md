@@ -325,7 +325,7 @@ while(r>l+1){
 }
 cout<<r<<endl;
 ```
-### Ordered Set _O(log(n))_
+### Ordered Set $O(log(n))$
 > - _order_of_key$(k)$_ : Number of item strictly smaller than $k$
 > - _find_by_order$(k)$_ : $k$th element in a set (counting from $0$)
 ```c++
@@ -357,7 +357,7 @@ auto lower_bound=[&](int element)->int{
 # Algorithms
 ### Kaden's Algorithm
 >Given an array of $n$ elements. Find maximum sum of contiguous non-empty subarray.
->[-1,(3,-2,5,3),-5,2,2]=9
+>[-1,$(3,-2,5,3)$,-5,2,2]=$9$
 ```c++
 int mx_so_far=INT_MIN;// stores max sub-sum so far
 int mx_end_here=0;// stores max sub-sum ending at current pos
