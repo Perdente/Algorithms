@@ -381,9 +381,9 @@ cout<<mx_so_far<<endl;
 > - Iterate over the unsorted result set, and binary search for the required value in the sorted set. 
 
 <details>
-<summary>Problem</summary>
+<summary>Problems</summary>
 <ul>
-You are given an array of $n$ numbers. In how many ways can you choose a subset of the numbers with sum $x$?
+1.You are given an array of $n$ numbers where $n<=40$. In how many ways can you choose a subset of the numbers with sum $x$?
 <details>
 <summary>Code</summary>
 <ul>
@@ -428,6 +428,7 @@ cout<<cnt<<endl;
 	
 </ul>
 </details>
+
 
 </ul>
 </details>
