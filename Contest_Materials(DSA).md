@@ -373,3 +373,62 @@ for(int i=0;i<n;++i){
 }
 cout<<mx_so_far<<endl;
 ```
+
+### Meet in the middle
+> Condition: If the problem can be solved using $n/2$ then we can use _meet in the middle_
+> - Split the given set into two sets of approximately equal size.
+> - Compute the required answers for one set, and sort it to make it ready for binary search.
+> - Iterate over the unsorted result set, and binary search for the required value in the sorted set. 
+
+<details>
+<summary>Problem</summary>
+<ul>
+You are given an array of $n$ numbers. In how many ways can you choose a subset of the numbers with sum $x$?
+<details>
+<summary>Code</summary>
+<ul>
+	
+```c++
+cin>>n>>m;
+k=n/2;
+V v(k),u(n-k);
+lp(i,k){
+	cin>>v[i];
+}
+lp(i,n-k){
+	cin>>u[i];
+}
+M mp;
+lp(mask,(1LL<<k)){
+	sum=0;
+	lp(i,k){
+		if(mask & (1LL<<i)){
+			sum+=v[i];
+			if(sum>m)break;
+		}
+	}
+	mp[sum]++;
+}
+St st;
+cnt=0;
+lp(mask,(1LL<<(n-k))){
+	sum=0;
+	lp(i,(n-k)){
+		if(mask & (1LL<<i)){
+			sum+=u[i];
+			if(sum>m)break;
+		}
+	}
+	if(mp.find(m-sum)!=mp.end()){
+		cnt+=mp[m-sum];
+	}
+}
+cout<<cnt<<endl;
+```
+	
+</ul>
+</details>
+
+</ul>
+</details>
+
