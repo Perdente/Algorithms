@@ -425,6 +425,32 @@ lp(mask,(1LL<<(n-k))){
 }
 cout<<cnt<<endl;
 ```
+</ul>
+</details>
+2.Given a sequence $a_1,a_2,…,a_n (n≤2000)$, count increasing subsequences of length $3$.
+<details>
+<summary>Code</summary>
+<ul>
+	
+```c++
+cin>>n;
+V v(n);
+lp(i,n){
+	cin>>v[i];
+}
+ans=0;
+lp(i,n){
+	cnt=0,cnt1=0;
+	lp1(j,i+1,n-1){
+		if(v[i]<v[j])cnt++;
+	}
+	rlp(k,i-1,0){
+		if(v[k]<v[i])cnt1++;
+	}
+	ans+=cnt*cnt1;
+}
+cout<<ans<<endl;
+```
 	
 </ul>
 </details>
