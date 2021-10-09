@@ -427,6 +427,7 @@ cout<<cnt<<endl;
 ```
 </ul>
 </details>
+	
 2.Given a sequence $a_1,a_2,…,a_n (n≤2000)$, count increasing subsequences of length $3$.
 <details>
 <summary>Code</summary>
@@ -455,6 +456,38 @@ cout<<ans<<endl;
 </ul>
 </details>
 
+3.You are given an array of $n$ integers $a_1,a_2,a_3,...a_n$ and your task is to find four values (at _distinct_ positions) whose sum is $x$.
+<details>
+<summary>Code</summary>
+<ul>
+	
+```c++
+int n,m;cin>>n>>m;
+vector<int> v(n);
+for(int i=0;i<n;++i){
+	cin>>v[i];
+}
+map<int,pair<int,int>> mp;
+for(int i=0;i<n;++i){
+	for(int j=i+1;j<n;++j){
+		int missing=m-v[i]-v[j];
+		if(missing>m)continue;
+		auto it=mp.find(missing);
+		if(it!=mp.end()){
+		cout<<i+1<<" "<<j+1<<" "<<(*it).second.first<<" "<<(*it).second.second;
+		return;
+		}
+	}
+	for(int k=0;k<i;++k){
+		if(v[i]+v[k]>m)continue;
+		mp.insert({v[i]+v[k],{i+1,k+1}});
+	}
+}
+cout<<"IMPOSSIBLE\n";
+```
+	
+</ul>
+</details>
 
 </ul>
 </details>
