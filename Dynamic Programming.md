@@ -1,3 +1,43 @@
+# Basic
+
+<details>
+<summary>Problems</summary>
+<ul>
+  <details>
+  <summary>Filling Shapes</summary>
+  <ul>
+       You have a given integer $n$. Find the number of ways to fill all $3×n$ tiles with the shape described in the picture below. Upon filling, no empty spaces are allowed.          Shapes cannot overlap.
+       <a href="https://ibb.co/SVNqwJp"><img src="https://i.ibb.co/ZcdyzNC/b83f3a7f74be29b2f62f8e51f6126ffd20d9757c.png" alt="b83f3a7f74be29b2f62f8e51f6126ffd20d9757c" border="0"></a>
+    
+    
+>Here, the tiles dimentions can be $1×2$ or $2×1$. If we put two tiles of different type only then $3$ row can fully filled with $2$ column.So there is no gaps between them. So, our $f[i]$ is dependent upon $f[i-2]$ value, hence dp is used.
+    
+> State: $f[i] =$ no of ways to fill $ith$ row ,
+    
+> Base case: $f[0]=1$ (as if row is $0$ there is always a way), 
+    $f[1]=0$.
+    
+> Recurrence: $$   f[n] = 2* f[n-2]  $$
+    
+```c++
+int n;cin>>n;
+int f[n+1];
+f[0]=1;
+f[1]=0;
+for(int i=2;i<=n;++i)
+{
+    f[i]=2*f[i-2];
+}
+cout<<f[n]<<endl;
+```   
+
+  </ul>
+  </details>
+ 
+</ul>
+</details>
+
+
 # Coin Change
 
 ### Minimizing Coin
