@@ -10,7 +10,7 @@
        <a href="https://ibb.co/SVNqwJp"><img src="https://i.ibb.co/ZcdyzNC/b83f3a7f74be29b2f62f8e51f6126ffd20d9757c.png" alt="b83f3a7f74be29b2f62f8e51f6126ffd20d9757c" border="0"></a>
     
     
->Here, the tiles dimentions can be $1×2$ or $2×1$. If we put two tiles of different type only then $3$ row can fully filled with $2$ column.So there is no gaps between them. So, our $f[i]$ is dependent upon $f[i-2]$ value, hence dp is used.
+>Here, the tiles dimentions can be $1×2$ or $2×1$. If we put two tiles of different type only then $3$ row can fully filled with the shaped tiles with $2$ column.So there is no gaps between them. So, our $f[i]$ is dependent upon $f[i-2]$ value, hence dp is used.
     
 > State: $f[i] =$ no of ways to fill $ith$ row ,
     
