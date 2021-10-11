@@ -2,6 +2,7 @@
 
 <details>
 <summary>Problems</summary>
+  
 <ul>
   <details>
   <summary>Filling Shapes</summary>
@@ -31,9 +32,70 @@ for(int i=2;i<=n;++i)
 cout<<f[n]<<endl;
 ```   
 
-  </ul>
-  </details>
- 
+</ul>
+</details>
+
+<ul>
+<details>
+<summary>Frog Jump</summary>
+<ul>
+     There are $N$ stones, numbered $1,2,…,N$. For each $i$ $(1≤i≤N)$, the height of Stone $i$ is $h_i$ .There is a frog who is initially on Stone $1$. He will repeat the following action some number of times to reach Stone $N$:
+- If the frog is currently on Stone $i$, jump to one of the following: Stone $i+1,i+2,…,i+K$. Here, a cost of $|h_i-h_j|$ is incurred, where $j$ is the stone to land on.
+
+Find the minimum possible total cost incurred before the frog reaches Stone $N$.
+    
+    
+```c++
+int n,k;cin>>n>>k;
+vector<ll>a(n),dp(n,inf);
+for(int i=0;i<n;++i)cin>>a[i];
+dp[0]=0;
+for(int i=0;i<n;++i)
+{
+  for(int j=i+1;j<=i+k;++j)
+  {
+    if(j<n) dp[j]=min(dp[j],dp[i]+abs(a[i]-a[j]));
+  }
+}
+cout<<dp[n-1]<<endl;
+```   
+
+</ul>
+</details>
+    
+  
+<ul>
+<details>
+<summary>Vacation </summary>
+<ul>
+     The vacation consists of $N$ days. For each $i$ $(1≤i≤N)$, Taro will choose one of the following activities and do it on the $i-th$ day:
+
+- A: Swim in the sea. Gain $a_i$ points of happiness.
+- B: Catch bugs in the mountains. Gain $b_i$ points of happiness.
+- C: Do homework at home. Gain $c_i$ points of happiness.
+
+As Taro gets bored easily, he cannot do the same activities for two or more consecutive days.
+
+Find the maximum possible total points of happiness that Taro gains.
+    
+```c++
+int n;cin>>n;
+vector<int> a(n),b(n),c(n);
+for(int i=0;i<n;++i)cin>>a[i]>>b[i]>>c[i];
+vector<int> dp(3);
+for(int i=0;i<n;++i){
+    vector<int> temp(3);
+    temp[0]=a[i]+ max(dp[1],dp[2]);
+    temp[1]=b[i]+ max(dp[0],dp[2]);
+    temp[2]=c[i]+ max(dp[0],dp[1]);
+    dp=temp;
+}
+cout<<*max_element(dp.begin(), dp.end())<<'\n';
+```   
+
+</ul>
+</details>
+      
 </ul>
 </details>
 
