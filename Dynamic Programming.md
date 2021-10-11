@@ -96,6 +96,30 @@ cout<<*max_element(dp.begin(), dp.end())<<'\n';
 </ul>
 </details>
       
+  <ul>
+<details>
+  <summary>Broken keyboard </summary>
+<ul>
+     Recently, Norge found a string $s=s_1s_2…s_n$ consisting of $n$ lowercase Latin letters. As an exercise to improve his typing speed, he decided to type all substrings of the string $s$.Norge realized that his keyboard was broken, namely, he could use only $k$ Latin letters $c_1,c_2,…,c_k$ out of $26$.
+    
+```c++
+int n;cin>>n;
+vector<int> a(n),b(n),c(n);
+for(int i=0;i<n;++i)cin>>a[i]>>b[i]>>c[i];
+vector<int> dp(3);
+for(int i=0;i<n;++i){
+    vector<int> temp(3);
+    temp[0]=a[i]+ max(dp[1],dp[2]);
+    temp[1]=b[i]+ max(dp[0],dp[2]);
+    temp[2]=c[i]+ max(dp[0],dp[1]);
+    dp=temp;
+}
+cout<<*max_element(dp.begin(), dp.end())<<'\n';
+```   
+
+</ul>
+</details>
+   
 </ul>
 </details>
 
