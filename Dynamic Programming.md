@@ -101,20 +101,24 @@ cout<<*max_element(dp.begin(), dp.end())<<'\n';
   <summary>Broken keyboard </summary>
 <ul>
      Recently, Norge found a string $s=s_1s_2…s_n$ consisting of $n$ lowercase Latin letters. As an exercise to improve his typing speed, he decided to type all substrings of the string $s$.Norge realized that his keyboard was broken, namely, he could use only $k$ Latin letters $c_1,c_2,…,c_k$ out of $26$.
-    
+    > state: $dp[i]$ = num of substrings ending at index $i$
 ```c++
-int n;cin>>n;
-vector<int> a(n),b(n),c(n);
-for(int i=0;i<n;++i)cin>>a[i]>>b[i]>>c[i];
-vector<int> dp(3);
-for(int i=0;i<n;++i){
-    vector<int> temp(3);
-    temp[0]=a[i]+ max(dp[1],dp[2]);
-    temp[1]=b[i]+ max(dp[0],dp[2]);
-    temp[2]=c[i]+ max(dp[0],dp[1]);
-    dp=temp;
+int n,m;cin>>n>>m;
+string s;cin>>s;
+vector<int> can(26);
+while(m--){
+    char ch;cin>>ch;
+    can[ch-'a']=1;
 }
-cout<<*max_element(dp.begin(), dp.end())<<'\n';
+int sum=0;
+vector<int> dp(n+1);
+for(int i=0;i<n;++i){
+    if(can[s[i]-'a']){
+        dp[i+1]=dp[i]+1;
+    }
+    sum+=dp[i+1];
+}
+cout<<sum<<endl;
 ```   
 
 </ul>
