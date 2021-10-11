@@ -334,6 +334,63 @@ cout<<ans<<'\n';
 </ul>
 </details>
 
+<details>
+<summary>Variants</summary>
+<ul>
+<details>
+<summary>Orac and Models </summary>
+<ul>
+Given an array of $n$ elements. Here we need to find the longest increasing subsequence for the indices which were divisible by each other. $i$ and $j$ index must be divisible 
+
+$[1,4,2 ,3, 6, 4, 9]$
+Here the indices ${1,3,6}$ has increasing subsequence hence ans is $3$
+
+<details>
+<summary>code</summary>
+<ul>
+                                    
+```c++
+
+const int N=1e5+10;
+
+vector<int> divi[N],dp(N),v(N);
+
+for(int i=1;i<N;++i){
+  for(int j=i*2;j<N;j+=i){
+      divi[i].push_back(j);
+  }
+}
+int main(){
+  int n;cin>>n;
+  for(int i=1;i<=n;++i){
+    cin>>v[i];
+  }
+  for(int i=1;i<=n;++i) dp[i]=1;// there is always length 1 subsequences exists 
+  for(int i=1;i<=n;++i){
+    for(auto j:divi[i]){
+        if(v[i]<v[j]) dp[j]=max(dp[j],dp[i]+1);
+    }
+  }
+  cout<<*max_element(dp.begin()+1, dp.begin()+n+1)<<endl;
+}
+                                                       
+                                                       
+```
+                                                                                           
+                                                                                           
+</ul>
+</details>
+  
+</ul>
+</details>
+
+</ul>
+</details>
+
+</ul>
+</details>
+
+
  $\mathcal{O}(nlogn)$
 <details>
 <summary>Code</summary>
