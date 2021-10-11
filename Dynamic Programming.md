@@ -101,7 +101,9 @@ cout<<*max_element(dp.begin(), dp.end())<<'\n';
   <summary>Broken keyboard </summary>
 <ul>
      Recently, Norge found a string $s=s_1s_2…s_n$ consisting of $n$ lowercase Latin letters. As an exercise to improve his typing speed, he decided to type all substrings of the string $s$.Norge realized that his keyboard was broken, namely, he could use only $k$ Latin letters $c_1,c_2,…,c_k$ out of $26$.
-    > state: $dp[i]$ = num of substrings ending at index $i$
+    
+  > state: $dp[i]$ = num of substrings ending at index $i$
+  
 ```c++
 int n,m;cin>>n>>m;
 string s;cin>>s;
