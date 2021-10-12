@@ -77,6 +77,7 @@ cout<<dp[n-1]<<endl;
 As Taro gets bored easily, he cannot do the same activities for two or more consecutive days.
 
 Find the maximum possible total points of happiness that Taro gains.
+Note: similar problem: [ Pokémon Army (easy version)](https://codeforces.com/contest/1420/submission/131606583)
     
 ```c++
 int n;cin>>n;
