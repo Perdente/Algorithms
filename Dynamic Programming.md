@@ -314,6 +314,9 @@ cout<<lcs_str(s,t,n,m)<<endl;
 </details>
   
 # Longest Increasing Subsequence
+  
+  > You are given an array containing $n$ integers. Your task is to determine the longest increasing subsequence in the array, i.e., the longest subsequence where every element is larger than the previous one. eg. $[7, 3, 5, 3, 6, 2, 9, 8]$  ans is $4$ ; indices ${1,2,4,6}$
+  
  $\mathcal{O}(n^2)$
 <details>
 <summary>Code</summary>
