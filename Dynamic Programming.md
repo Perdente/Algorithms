@@ -44,7 +44,8 @@ cout<<f[n]<<endl;
 - If the frog is currently on Stone $i$, jump to one of the following: Stone $i+1,i+2,…,i+K$. Here, a cost of $|h_i-h_j|$ is incurred, where $j$ is the stone to land on.
 
 Find the minimum possible total cost incurred before the frog reaches Stone $N$.
-    
+
+Note: similar problem: [ Bouncing Ball](https://codeforces.com/contest/1415/submission/131650801)
     
 ```c++
 int n,k;cin>>n>>k;
