@@ -28,6 +28,7 @@
 - [Kruskal's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#kruskals-algorithm-om-log-n "minimum spanning tree")
 
 ### Dynamic Programming
+- [Basic](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#basic)
 - [Coin Change](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#coin-change)
 - [Knapsack](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#knapsack)
 - [Longest Common Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-common-subsequence)
