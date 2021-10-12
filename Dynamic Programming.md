@@ -80,7 +80,7 @@ As Taro gets bored easily, he cannot do the same activities for two or more cons
 
 Find the maximum possible total points of happiness that Taro gains.
   
-Note: similar problem: [ Pokémon Army (easy version)](https://codeforces.com/contest/1420/submission/131606583) , [ Best Time to Buy and Sell Stock II](https://leetcode.com/submissions/detail/569909708/)
+Note: similar problem: [ Pokémon Army (easy version)](https://codeforces.com/contest/1420/submission/131606583) , [ Best Time to Buy and Sell Stock II](https://leetcode.com/submissions/detail/569909708/), [ Basketball Exercise](https://codeforces.com/contest/1195/submission/131671341)
     
 ```c++
 int n;cin>>n;
