@@ -36,6 +36,9 @@
 - [Edit Distance](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#edit-distance)
 - [Grid DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#grid-dp)
 
+### Big_Integer
+- [String Operations](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md)
+
 
 ### Miscellaneous
 - [Rotation of Matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
