@@ -12,7 +12,7 @@ auto lexicographically_larger=[&](string str1,string str2)->string{
 
 ```
 
-### Check if it's Lexicographically Bigger String or not?
+### Check if it's _strictly_ Lexicographically Bigger String or not?
 ```c++
 auto bigger=[&](string a, string b){
     if (a.length() > b.length()) return true;
