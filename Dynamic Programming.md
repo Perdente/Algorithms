@@ -129,6 +129,35 @@ cout<<sum<<endl;
 
 </ul>
 </details>
+  
+  
+  <ul>
+<details>
+  <summary>Boredom </summary>
+<ul>
+     Given a sequence $a$ consisting of $n$ integers. The player can make several steps. In a single step he can choose an element of the sequence (let's denote it $a_k$) and delete it, at that all elements equal to $a_k + 1$ and $a_k - 1$ also must be deleted from the sequence. That step brings ak points to the player.
+  
+  > State: $dp[i] = $ maximum points gained by the total frequency of $i$ th element
+  
+  > Recurrence :  $$ dp[i]=max(dp[i+1],dp[i]+dp[i+2]); $$
+  
+```c++
+int n,x,ma=0;cin>>n;
+map<int,int>dp;
+for(int i=0;i<n;++i){
+    cin>>x;
+    dp[x]+=x;
+    ma=max(ma,x);
+}
+for(int i=ma+2;i>=1;--i){
+    dp[i]=max(dp[i+1],dp[i]+dp[i+2]);
+}
+cout<<dp[1]<<endl;
+
+```   
+
+</ul>
+</details>
    
 </ul>
 </details>
