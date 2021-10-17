@@ -566,6 +566,7 @@ cout<<dp[n-1][m-1]<<endl;
 <ul>
   
 ```c++
+
 int longestIncreasingPath(vector<vector<int>>& matrix) {
 int r=matrix.size();
 int c=matrix[0].size();
@@ -576,27 +577,25 @@ auto inside=[&](int x,int y){
 };
 
 function<int(int,int)>solve=[&](int si,int sj)->int{
-      int ans=1;
-      if(dp[si][sj]) return dp[si][sj];
-      if(inside(si,sj)){
-          vector<pair<int,int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
-          for(pair<int,int>dir:directions){
-              int ni=si+dir.first;
-              int nj=sj+dir.second;
-              if(inside(ni,nj) and matrix[ni][nj]>matrix[si][sj]){
-                  ans=max(ans,1+solve(ni,nj));
-              }
-          }
-      }
-      return dp[si][sj]=ans;
-  };
-  int ans=0;
-  for(int i=0;i<r;++i){
-      for(int j=0;j<c;++j){
-          ans=max(ans,solve(i,j));
-      }
-  }
-  return ans;
+    int ans=1;
+    if(dp[si][sj]) return dp[si][sj];
+    vector<pair<int,int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
+    for(pair<int,int>dir:directions){
+        int ni=si+dir.first;
+        int nj=sj+dir.second;
+        if(inside(ni,nj) and matrix[ni][nj]>matrix[si][sj]){
+            ans=max(ans,1+solve(ni,nj));
+        }
+    }
+    return dp[si][sj]=ans;
+};
+int ans=0;
+for(int i=0;i<r;++i){
+    for(int j=0;j<c;++j){
+        ans=max(ans,solve(i,j));
+    }
+}
+return ans;
 }
   ```
 </ul>
