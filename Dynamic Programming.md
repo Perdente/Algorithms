@@ -566,7 +566,6 @@ cout<<dp[n-1][m-1]<<endl;
 <ul>
   
 ```c++
-vector<vector<bool>>visited; 
 int longestIncreasingPath(vector<vector<int>>& matrix) {
 int r=matrix.size();
 int c=matrix[0].size();
