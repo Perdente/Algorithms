@@ -183,9 +183,9 @@ cout<<sum<<endl;
 <details>
   <summary>Boredom </summary>
 <ul>
-     Given a sequence $a$ consisting of $n$ integers. The player can make several steps. In a single step he can choose an element of the sequence (let's denote it $a_k$) and delete it, at that all elements equal to $a_k + 1$ and $a_k - 1$ also must be deleted from the sequence. That step brings ak points to the player.
+     Given a sequence $a$ consisting of $n$ integers. The player can make several steps. In a single step he can choose an element of the sequence (let's denote it $a_k$) and delete it, at that all elements equal to $a_k + 1$ and $a_k - 1$ also must be deleted from the sequence. That step brings $a_k$ points to the player.
   
-  Similar problem:[House Robber](https://leetcode.com/submissions/detail/572701091/)
+  Similar problem:[House Robber](https://leetcode.com/submissions/detail/572701091/),[House Robber 2](https://leetcode.com/problems/house-robber-ii/submissions/)
   
   > State: $dp[i] = $ maximum points gained by the total frequency of $i$ th element
   
