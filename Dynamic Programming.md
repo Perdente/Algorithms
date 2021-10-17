@@ -556,6 +556,52 @@ cout<<dp[n-1][m-1]<<endl;
 ```
 </ul>
 </details>
+  
+> Given an $m$ x $n$ integers matrix, return the length of the longest increasing path in matrix.From each cell, you can either move in four directions: left, right, up, or down.You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
+  
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/gtB3JRS/grid1.jpg" alt="grid1" border="0"></a>
+
+  <details>
+<summary>Code</summary>
+<ul>
+  
+```c++
+vector<vector<bool>>visited; 
+int longestIncreasingPath(vector<vector<int>>& matrix) {
+int r=matrix.size();
+int c=matrix[0].size();
+vector<vector<int>>mat(r,vector<int>(c,1));
+vector<vector<int>>dp(r,vector<int>(c));
+auto inside=[&](int x,int y){
+    return 0<=x and x<r and 0<=y and y<c;
+};
+
+function<int(int,int)>solve=[&](int si,int sj)->int{
+      int ans=1;
+      if(dp[si][sj]) return dp[si][sj];
+      if(inside(si,sj)){
+          vector<pair<int,int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
+          for(pair<int,int>dir:directions){
+              int ni=si+dir.first;
+              int nj=sj+dir.second;
+              if(inside(ni,nj) and matrix[ni][nj]>matrix[si][sj]){
+                  ans=max(ans,1+solve(ni,nj));
+              }
+          }
+      }
+      return dp[si][sj]=ans;
+  };
+  int ans=0;
+  for(int i=0;i<r;++i){
+      for(int j=0;j<c;++j){
+          ans=max(ans,solve(i,j));
+      }
+  }
+  return ans;
+}
+  ```
+</ul>
+</details>
 
   
   
