@@ -45,7 +45,7 @@ cout<<f[n]<<endl;
 
 Find the minimum possible total cost incurred before the frog reaches Stone $N$.
 
-Note: similar problem: [ Bouncing Ball](https://codeforces.com/contest/1415/submission/131650801) , [Jump Game](https://leetcode.com/submissions/detail/450891667/), [Jump Game II](https://leetcode.com/problems/jump-game-ii/)
+Note: similar problem: [ Bouncing Ball](https://codeforces.com/contest/1415/submission/131650801) 
     
 ```c++
 int n,k;cin>>n>>k;
@@ -65,6 +65,54 @@ cout<<dp[n-1]<<endl;
 </ul>
 </details>
     
+
+  <ul>
+<details>
+  <summary>Jump Games</summary>
+<ul>
+     You are given an integer array $nums$. You are initially positioned at the array's $1$st index, and each element in the array represents your maximum jump length at that position.Return true if you can reach the last index, or false otherwise.Also count the minimum jumps.
+  
+```
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+```
+  
+```c++
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int n=nums.size();
+        if(n<=1){
+            return true;
+        }
+        pair<int,int>interval{0,0}; //here interval{min_distance,max_distance}
+        int jumps=0;
+        while(true){
+            jumps++;
+            int can_reach=-1;
+            for(int i=interval.first;i<=interval.second;++i){
+                can_reach=max(can_reach,i+nums[i]);            
+            }
+            
+            if(can_reach>=n-1){
+                cout<<jumps<<endl;
+                return true;
+            }
+            
+            interval={interval.second+1,can_reach};
+            if(interval.first>interval.second){ //means the jumps can never be enough
+                cout<<jumps<<endl;
+                return false;
+            }
+        }
+        assert(false); //I don't know why I use it but fear to delete it😂
+    }
+};
+```   
+
+</ul>
+</details>  
   
 <ul>
 <details>
