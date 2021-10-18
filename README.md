@@ -35,6 +35,7 @@
 - [Longest Increasing Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-increasing-subsequence)
 - [Edit Distance](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#edit-distance)
 - [Grid DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#grid-dp)
+- [Bitmask DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#bitmask-dp)
 
 ### Big_Integer
 - [String Operations](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md)
