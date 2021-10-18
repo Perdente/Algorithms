@@ -667,12 +667,12 @@ int n;cin>>n;
 
 auto add=[&](int x){
 // Here, if the bit is not present then add.
-  if(!(n & (1<<x))) n=(n^(1<<x));
+  if(!(n & (1<<x))) n^=(1<<x);
 };
 
 auto remove=[&](int x){
   // Here, if the bit is already present then remove.
-  if(n & (1<<x)) n=(n^(1<<x));
+  if(n & (1<<x)) n^=(1<<x);
 };
 auto display=[&](){
   for(int mask=0;mask<=31;++mask){ // an integer consists of 32 bits
