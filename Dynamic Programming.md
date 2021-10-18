@@ -651,5 +651,37 @@ return ans;
 </ul>
 </details>
 
+ 
   
   
+ # Bitmask DP
+  
+  > Add, remove and display the bits using bitmasking.
+  
+  ```c++
+int n;cin>>n;
+
+auto add=[&](int x){
+  // Here, if the bit is not present then add.
+    if(!(n & (1<<x))) n=(n^(1<<x));
+};
+
+auto remove=[&](int x){
+    // Here, if the bit is already present then remove.
+    if(n & (1<<x)) n=(n^(1<<x));
+};
+auto display=[&](){
+    for(int mask=0;mask<=31;++mask){ // an integer consists of 32 bits
+        if(n & (1<<mask)){                2^31 .... 16 8 4 2 1
+            cout<<mask<<" ";   // n ->              0  0 1 1 0    
+                             //(2^1)                0  0 0 1 0    //1st bit is SET
+                             //(2^3)                0  1 0 0 0    //3rd bit is not SET     
+        }
+    }
+};
+remove(2);
+add(3);
+remove(7);
+add(3);
+display();
+  ```
