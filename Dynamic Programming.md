@@ -744,7 +744,7 @@ cout<<solve(0,(1<<n)-1,n)<<'\n';
 [source 1](https://www.youtube.com/watch?v=QukpHtZMAtM&list=PLb3g_Z8nEv1icFNrtZqByO1CrWVHLlO5g&index=4),[source 2](https://www.youtube.com/watch?v=XaXsJJh-Q5Y)
       
 Related problems:
-[1](https://atcoder.jp/contests/abc180/tasks/abc180_e)----------[submission](https://atcoder.jp/contests/abc180/submissions/26691458)
+[1)](https://atcoder.jp/contests/abc180/tasks/abc180_e)-->[submission](https://atcoder.jp/contests/abc180/submissions/26691458)
     
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/nDKjp41/download.jpg" alt="download" border="0"></a> 
 
