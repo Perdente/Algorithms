@@ -694,7 +694,7 @@ display();
 </details>
     
     
->_Job Assignment:_ Let there be $N$ workers and $N$ jobs. Any worker can be assigned to perform any job, incurring some cost that may vary depending on the work-job assignment. It is required to perform all jobs by assigning exactly one worker to each job and exactly one job to each agent in such a way that the total cost of the assignment is minimized.Here,$N<=20$
+>_Job Assignment:_ Let there be $N$ workers and $N$ jobs. Any worker can be assigned to perform any job, incurring some cost that may vary depending on the work-job assignment. It is required to perform all jobs by assigning exactly one worker to each job and exactly one job to each agent in such a way that the total cost of the assignment is minimized.Here,$N\leq20$
 
 [source](https://www.youtube.com/watch?v=685x-rzOIlY&list=PLb3g_Z8nEv1icFNrtZqByO1CrWVHLlO5g&index=3)
     
