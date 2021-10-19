@@ -706,21 +706,25 @@ display();
 <ul>
 
 ```c++
+
+// dp[i][mask] =  min cost to assign job i to job n and the people available represented by mask
 const int N=21;
 int cost[N][N],dp[N][(1<<N)];
 
 int solve(int i,int mask,int &n){
-  if(i==n) return 0;
-  if(dp[i][mask]!=-1) return dp[i][mask];
+    if(i==n) return 0; //if every person is already assigned the job then cost is 0
+    if(dp[i][mask]!=-1) return dp[i][mask];
 
-  int ans=INT_MAX;
-  for(int j=0;j<n;++j){
-      if( mask & (1<<j) ){
-          ans=min(ans,cost[j][i] + solve(i+1,(mask^(1<<j)),n));
-      }
-  }
-  return dp[i][mask]=ans;
+    int ans=INT_MAX;
+    // here i=job, j=people, mask=available people at that moment.
+    for(int j=0;j<n;++j){
+        if( mask & (1<<j) ){ //if the jth person is available at that moment
+            ans=min(ans,cost[j][i] + solve(i+1,(mask^(1<<j)),n)); //we'll toggle the jth bit as jth person has already been assigned
+        }
+    }
+    return dp[i][mask]=ans;
 }
+
 int n;cin>>n;
 for(int i=0;i<n;++i){
     for(int j=0;j<n;++j){
