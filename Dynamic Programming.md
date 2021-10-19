@@ -737,6 +737,50 @@ cout<<solve(0,(1<<n)-1,n)<<'\n';
   
 </ul>
 </details>
+
+      
+>_Travelling Salesman Problem:_ Given a set of cities and distances between every pair of cities, the problem is to find the shortest possible route that visits every city exactly once and returns to the starting point. 
+
+[source 1](https://www.youtube.com/watch?v=QukpHtZMAtM&list=PLb3g_Z8nEv1icFNrtZqByO1CrWVHLlO5g&index=4),[source 2](https://www.youtube.com/watch?v=XaXsJJh-Q5Y)
     
+ <a href="https://imgbb.com/"><img src="https://i.ibb.co/nDKjp41/download.jpg" alt="download" border="0"></a> 
+
+<details>
+<summary>Code</summary>
+<ul>
+
+```c++
+
+// dp[i][mask] =  min dist needed to travel from city i to cities represented by mask 
+const int N=21;
+int tsp[N][N],dp[N][(1<<N)];
+
+int solve(int i,int mask,int &n){
+    if(mask==0) return tsp[i][0]; //when we have no cities left we can travel to our base city
+    if(dp[i][mask]!=-1) return dp[i][mask];
+
+    int ans=INT_MAX;
+    // here i=current city, mask=available cities at that moment.
+    for(int j=0;j<n;++j){
+        if( mask & (1<<j) ){ //if the jth city is available at that moment
+            ans=min(ans,tsp[i][j] + solve(j,(mask^(1<<j)),n)); //we'll toggle the jth bit as jth city has already been visited
+        }
+    }
+    return dp[i][mask]=ans;
+}
+int n;cin>>n;
+for(int i=0;i<n;++i){
+    for(int j=0;j<n;++j){
+        cin>>tsp[i][j];
+    }
+}
+memset(dp,-1,sizeof(dp));
+cout<<solve(0,((1<<n)-1)^1,n)<<'\n';
+// here ^1 represents total minimum dist except for city 1
+```
+  
+</ul>
+</details>
+ 
     
 
