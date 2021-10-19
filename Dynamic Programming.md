@@ -745,6 +745,20 @@ cout<<solve(0,(1<<n)-1,n)<<'\n';
     
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/nDKjp41/download.jpg" alt="download" border="0"></a> 
 
+```
+Input:
+
+4
+-1 10 15 20
+10 -1 35 25
+15 35 -1 30
+20 25 30 -1
+      
+Output:80
+1->2->4->3->1
+10 + 25 + 30 + 15 := 80
+```      
+      
 <details>
 <summary>Code</summary>
 <ul>
