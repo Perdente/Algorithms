@@ -894,5 +894,20 @@ cout<<solve(0,((1<<n)-1)^1,n)<<'\n';
 </ul>
 </details>
  
+
+
+<details>
+<summary>Related Problems</summary>
+<ul>
+ - [Vitamins](https://codeforces.com/gym/302977/problem/C) [Submission](https://codeforces.com/gym/302977/submission/98868151)
+</ul>
+</details>
+
+
+
+
+
+
+
     
 
