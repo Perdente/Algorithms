@@ -599,12 +599,9 @@ cout<<dp[n][m]<<endl;
 </ul>
 </details>
   
- We have an integer sequence $A$ of length $N$ and an integer sequence $B$ of length $M$.
-Takahashi will make a new sequence $A'$ by removing some elements (possibly zero or all) from $A$ and concatenating the remaining elements.
-Similarly, he will make another new sequence $B'$ by removing some elements (possibly zero or all) from $B$ and concatenating the remaining elements.
+>We have an integer sequence $A$ of length $N$ and an integer sequence $B$ of length $M$.Takahashi will make a new sequence $A'$ by removing some elements (possibly zero or all) from $A$ and concatenating the remaining elements.Similarly, he will make another new sequence $B'$ by removing some elements (possibly zero or all) from $B$ and concatenating the remaining elements.
   
-Here, he will remove elements so that $|A'|=|B'|$ ($∣s∣$ denotes the length of $s$ for a sequence $s$.)
-Let $x$ be the total number of elements removed from $A$ and $B$, and $y$ be the number of integers $i$ such that $1≤i≤|A'|$ and $A'_i \neq B'_i$ . Find minimum value of $x+y$
+>Here, he will remove elements so that $|A'|=|B'|$ ($∣s∣$ denotes the length of $s$ for a sequence $s$.)Let $x$ be the total number of elements removed from $A$ and $B$, and $y$ be the number of integers $i$ such that $1≤i≤|A'|$ and $A'_i \neq B'_i$ . Find minimum value of $x+y$
  
 ```
 Input:
@@ -614,7 +611,7 @@ Input:
 Output:
 3
 ```
-If we remove nothing from $A$ and remove $B_4$ and $B_6$ from $B$, we have $x=2,y=1$, and $x+y=3$, which is the minimum possible value.
+> If we remove nothing from $A$ and remove $B_4$ and $B_6$ from $B$, we have $x=2,y=1$, and $x+y=3$, which is the minimum possible value.
 <details>
 <summary>Code </summary>
 <ul>
