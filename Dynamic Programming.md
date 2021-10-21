@@ -599,15 +599,50 @@ cout<<dp[n][m]<<endl;
 </ul>
 </details>
   
-  <details>
-<summary>Similar Problem</summary>
-<ul>
+ We have an integer sequence $A$ of length $N$ and an integer sequence $B$ of length $M$.
+Takahashi will make a new sequence $A'$ by removing some elements (possibly zero or all) from $A$ and concatenating the remaining elements.
+Similarly, he will make another new sequence $B'$ by removing some elements (possibly zero or all) from $B$ and concatenating the remaining elements.
   
-  [Sequence Matching ](https://atcoder.jp/contests/abc185/tasks/abc185_e) -- [submission](https://atcoder.jp/contests/abc185/submissions/26719096)
+Here, he will remove elements so that $|A'|=|B'|$ ($∣s∣$ denotes the length of $s$ for a sequence $s$.)
+Let $x$ be the total number of elements removed from $A$ and $B$, and $y$ be the number of integers $i$ such that $1≤i≤|A'|$ and $A'_i \neq B'_i$ . Find minimum value of $x+y$
+ 
+```
+Input:
+4 6
+1 3 2 4
+1 5 2 6 4 3
+Output:
+3
+```
+If we remove nothing from $A$ and remove $B_4$ and $B_6$ from $B$, we have $x=2,y=1$, and $x+y=3$, which is the minimum possible value.
+<details>
+<summary>Code </summary>
+<ul>
+ 
+```c++
+const int oo=1e10;
+int n,m;cin>>n>>m;
+vector<int> v(n),u(m);
+for(int i=0;i<n;++i)cin>>v[i];
+for(int i=0;i<m;++i)cin>>u[i];
+vector<vector<int>> dp(n+1,vector<int>(m+1,oo));
+dp[0][0]=0;
+for(int i=0;i<=n;++i)
+{
+  for(int j=0;j<=m;++j)
+  {
+    if(i)  dp[i][j]=min(dp[i][j],dp[i-1][j]+1);
+
+    if(j)  dp[i][j]=min(dp[i][j],dp[i][j-1]+1);
+
+    if(i and j)   dp[i][j]=min(dp[i][j],dp[i-1][j-1]+(v[i-1]!=u[j-1]));
+  }
+}
+cout<<dp[n][m]<<'\n';
+```
 
 </ul>
 </details>
-
 
 # Grid DP
 > Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
