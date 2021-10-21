@@ -595,8 +595,17 @@ for(int i=0;i<=n;++i)
 }
 cout<<dp[n][m]<<endl;
 ```
+  
 </ul>
 </details>
+  
+  <details>
+<summary>Similar Problem</summary>
+<ul>
+  [Sequence Matching ](https://atcoder.jp/contests/abc185/tasks/abc185_e) -- [submission](https://atcoder.jp/contests/abc185/submissions/26719096)
+</ul>
+</details>
+
 
 # Grid DP
 > Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
