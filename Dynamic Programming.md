@@ -156,6 +156,15 @@ cout<<*max_element(dp.begin(), dp.end())<<'\n';
 
 Return the minimum total distance between each house and its nearest mailbox.
   
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/DM5frMR/sample-11-1816.png" alt="sample-11-1816" border="0"></a>
+  ```
+Input: houses = [1,4,8,10,20], k = 3
+Output: 5
+Explanation: Allocate mailboxes in position 3, 9 and 20.
+Minimum total distance from each houses to nearest mailboxes is |3-1| + |4-3| + |9-8| + |10-9| + |20-20| = 5 
+
+  ```
+  
     
 ```c++
 const static int N=101;
