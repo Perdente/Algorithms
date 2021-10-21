@@ -147,7 +147,50 @@ cout<<*max_element(dp.begin(), dp.end())<<'\n';
 
 </ul>
 </details>
-      
+
+  <ul>
+<details>
+<summary>Allocate Mailboxes </summary>
+<ul>
+     Given the array houses and an integer $k$. where $houses[i]$ is the location of the $i$th house along a street, your task is to allocate $k$ mailboxes in the street.
+
+Return the minimum total distance between each house and its nearest mailbox.
+  
+    
+```c++
+const static int N=101;
+int cost[N][N],dp[N][N];
+
+int ok(vector<int>& houses , int k , int i){
+    int n=houses.size();
+    if(k==0 and i==n) return 0;
+    if(k==0 or i==n) return 1e9;
+    if(dp[k][i]!=-1) return dp[k][i];
+    int ans=1e9;
+    for(int j=i;j<n;j++){
+        ans=min(ans,cost[i][j]+ok(houses,k-1,j+1));
+    }
+    return dp[k][i]=ans;
+}
+
+int minDistance(vector<int>& houses, int k) {
+    sort(houses.begin(),houses.end());
+    int n=houses.size();
+    for(int i=0;i<n;i++){
+        for(int j=i;j<n;j++){
+            for(int x=i;x<=j;x++){
+                cost[i][j]+=abs(houses[(i+j)/2]-houses[x]);// min dist would be total abs dist from median house to all other houses in the branch
+            }
+        }
+    }
+    memset(dp,-1,sizeof(dp));
+    return ok(houses,k,0);
+}
+```   
+
+</ul>
+</details>
+
   <ul>
 <details>
   <summary>Broken keyboard </summary>
