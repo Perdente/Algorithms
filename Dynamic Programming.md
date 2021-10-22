@@ -923,7 +923,8 @@ cout<<solve(0,((1<<n)-1)^1,n)<<'\n';
 <ul>
  Three bags $A$,$B$ and $C$.Until the bag contains $100$ coins of the same color, we will randomly take out one coin from the bag. (Every coin has an equal probability of being chosen.) Then, put back into the bag two coins of the same kind as the removed coin.
   
-  Explanation: Here, for each step we'll calculate the expected values for each type of coins.From the definition, we can find the expected value for type $x$ is $\dfrac{x}{x+y+z}$ , the probablity of $x$ multipling with $solve(x+1,y,z)$,future expected values. Finally $dp[x][y][z]$ stores each expected values + $1$ for each single step.
+  
+  **Explanation:** Here, for each step we'll calculate the expected values for each type of coins.From the definition, we can find the expected value for type $x$ is $\dfrac{x}{x+y+z}$ , the probablity of $x$ multipling with $solve(x+1,y,z)$,future expected values. Finally $dp[x][y][z]$ stores each expected values + $1$ for each single step.
 
 <details>
 <summary>Code</summary>
