@@ -45,7 +45,7 @@ cout<<f[n]<<endl;
 
 Find the minimum possible total cost incurred before the frog reaches Stone $N$.
 
-Note: similar problem: [ Bouncing Ball](https://codeforces.com/contest/1415/submission/131650801) 
+Note: similar problem: [ Bouncing Ball](https://codeforces.com/contest/1415/submission/131650801), [Long jump](https://codeforces.com/contest/1472/submission/132667659) 
     
 ```c++
 int n,k;cin>>n>>k;
