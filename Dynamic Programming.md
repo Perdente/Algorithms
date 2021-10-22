@@ -905,6 +905,62 @@ cout<<solve(0,((1<<n)-1)^1,n)<<'\n';
 </ul>
 </details>
 
+  
+
+
+# Probablity DP
+  **Expected value:** is the average value of an event/experiment
+  $$
+  E(X) = \sum_{\omega\in\Omega}P(\omega)*X(\omega)
+  $$
+  where, $P(\omega)$ = The probablity of $\omega$ event to happen.
+         $X(\omega)$ = The result of $\omega$ event
+
+  
+
+<details>
+<summary>Problems</summary>
+<ul>
+ Three bags $A$,$B$ and $C$.Until the bag contains $100$ coins of the same color, we will randomly take out one coin from the bag. (Every coin has an equal probability of being chosen.) Then, put back into the bag two coins of the same kind as the removed coin.
+  
+  Explanation: Here, for each step we'll calculate the expected values for each type of coins.From the definition, we can find the expected value for type $x$ is $\dfrac{x}{x+y+z}$ , the probablity of $x$ multipling with $solve(x+1,y,z)$,future expected values. Finally $dp[x][y][z]$ stores each expected values + $1$ for each single step.
+
+<details>
+<summary>Code</summary>
+<ul>
+
+```c++
+const int N=101;
+double dp[N][N][N];
+
+double solve(int x,int y, int z){
+    if(x==100 or y==100 or z==100) return 0;
+    if(dp[x][y][z]) return dp[x][y][z];
+    double X=(1.0*x/(x+y+z))*solve(x+1,y,z);
+    double Y=(1.0*y/(x+y+z))*solve(x,y+1,z);
+    double Z=(1.0*z/(x+y+z))*solve(x,y,z+1);
+    return dp[x][y][z]=X+Y+Z+1;
+}
+double x,y,z;cin>>x>>y>>z; 
+cout<<fixed<<showpoint<<setprecision(20); 
+cout<<solve(x,y,z)<<endl;
+```
+
+</ul>
+</details>
+
+
+
+
+  
+</ul>
+</details>
+
+
+
+
+
+
 
 
 
