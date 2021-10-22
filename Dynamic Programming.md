@@ -1,4 +1,4 @@
-# Basic
+# Miscellaneous
 
 <details>
 <summary>Problems</summary>
