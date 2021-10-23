@@ -16,7 +16,7 @@
 - [Print all Divisors](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#print-all-divisors-osqrtn "n=16 -> {1,2,4,8,16}")
 - [Euler Totient Function](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#euler-totient-functionphi-function-osqrtn "Counts the number of integers 1 to n which are coprime to n.")
 - [Binary Exponentiation](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#binary-exponentiation "calculate a^b with mod or without")
-- [Binary Coefficient/NCR](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#ncr "calculate nCr with mod or without")
+- [Binary Coefficient/$nCr$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#ncr "calculate nCr with mod or without")
 
 ### Graph & Tree
 
