@@ -1,6 +1,6 @@
 # Contents
 - [C++ Tricks](https://github.com/Perdente/Algorithms/blob/master/C%2B%2B%20Tricks.md)
-- [key bindings]()
+- [key bindings](https://github.com/the-hyp0cr1t3/CC/blob/master/Sublime%20Text%20Setup.md#key-bindings)
 ### DSA
 - [Segment Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#segment-tree "seg-sum & seg-min")
 - [SQRT Decomposition](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#sqrt-decompositionmos-algorithm "MO's algorithm")
