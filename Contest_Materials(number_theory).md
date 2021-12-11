@@ -216,7 +216,7 @@ int binpow(int a,int b)
 	return res;
 }
 ```
-> with **mod**$(1e9+7)$
+> with **mod**$(1e^9+7)$
 ```C++
 int binpow(int a,int b,int m)
 {
@@ -241,7 +241,7 @@ int ncr(int n,int k) {
 }
 ```
 
-> with **mod**$(1e9+7)$
+> with **mod**$(1e^9+7)$
 ```C++
 const int mx=1e6,MOD=1e9+7;
 int fact[mx];
