@@ -230,7 +230,7 @@ int binpow(int a,int b,int m)
 	return (res % m);
 }
 ```
-### ncr 
+### Binary Coefficient
 > without **mod**
 ```C++
 int ncr(int n,int k) {
