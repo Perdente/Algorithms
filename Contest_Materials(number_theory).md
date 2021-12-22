@@ -206,12 +206,12 @@ int Phi(int n){
 ```C++
 int binpow(int a,int b)
 {
-	int res=1;
-	while(b>0)
+	int res = 1;
+	while(b > 0)
 	{
-		if(b%2)res*=a;
-		a*=a;
-		b>>=1LL;
+		if (b % 2) res *= a;
+		a *= a;
+		b >>= 1;
 	}
 	return res;
 }
@@ -220,14 +220,14 @@ int binpow(int a,int b)
 ```C++
 int binpow(int a,int b,int m)
 {
-	int res=1;a%=m;
+	int res = 1;a %= m;
 	while(b)
 	{
-		if(b%2)res=(res*a)%m;
-		a=(a*a)%m;
-		b>>=1LL;
+		if(b % 2)res = (res * a) % m;
+		a = (a * a) % m;
+		b >>= 1;
 	}
-	return (res%m);
+	return (res % m);
 }
 ```
 ### ncr 
