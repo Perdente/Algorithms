@@ -116,25 +116,25 @@ for(int i=0;i<m;++i){
   adj[u].push_back(v);
   adj[v].push_back(u);	
 }
-bool found_cycle=true;
-function<void(int)>dfs=[&](int u){
-  vis[u]=true;
-  if(adj[u].size()!=2) found_cycle=false;//checks if degree is 2
-  for(auto v:adj[u]){
-    if(!vis[v]){
-      dfs(v);
-    }
-  }
+function<bool(int,int)>dfs=[&](int u, int par){
+	vis[u]=true;
+	for(auto v : adj[u]){
+		if(!vis[v]){
+			if(dfs(v, u)) return true;
+		} else if(v != par){
+			return true;
+		}
+	}
+	return false;
 };
-int cnt=0;
-for(int node=1;node<=n;++node){
-  found_cycle=true;
-  if(!vis[node]){// checks for each cc
-    dfs(node);
-    if(found_cycle)cnt++;
-  }
+bool foundcycle = false;
+for(int i=1 ;i<=n;++i){
+	if(!vis[i]){ // check for each connected components if it has a cycle or not
+		if(dfs(i,-1)){
+			foundcycle = true;
+		}
+	}
 }
-cout<<cnt<<"\n";
 ```
 ### BFS
 ```c++
