@@ -271,6 +271,55 @@ for(int i=2;i<mx;++i)fact[i]=(fact[i-1]*1LL*i)%MOD;
 
 ```
 
+### Modular Arithmetic
+> Properties :
+> - $(a + b)$ % mod = ($a$ % mod + $b$ % mod) % mod
+> - $(a * b)$ % mod = ($a$ % mod * $b$ % mod) % mod
+> - $(a - b)$ % mod = (($a$ - $b$) % mod + mod) % mod
+> - $(a / b)$ % mod = ($a$ % mod * $b ^ (mod-2)$ % mod) % mod
+
+> Addition
+```c++
+int modadd( int a, int b, int n) {
+	return ((a % n) + (b % n)) % n;
+}
+```
+> Subtraction
+```c++
+int modsub( int a, int b, int n) {
+	return (((a % n) - (b % n)) % n + n) % n;
+}
+// faster
+// int modsub( int a, int b, int n) {
+// 	int ans = ((a % n) - (b % n)) % n;
+// 	if (ans < 0) ans += n;
+// 	return (ans % n);
+// }
+```
+> Multiplication
+```c++
+int modmul( int a, int b, int n) {
+	return ((a % n) * (b % n)) % n;
+}
+```
+> Division
+```c++
+int binpow(int a,int b,int m)
+{
+	int res = 1;a %= m;
+	while(b)
+	{
+		if(b % 2)res = (res * a) % m;
+		a = (a * a) % m;
+		b >>= 1;
+	}
+	return (res % m);
+}
+int moddiv( int a, int b, int n) {
+	return (a % n * binpow(b, n - 2, n) % n ) % n;
+}
+
+```
 
 
 
