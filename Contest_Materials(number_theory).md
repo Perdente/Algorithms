@@ -32,13 +32,13 @@ void Sieve(){
 ```C++
 vector<int> prime_factors;
 void PrimeFactorization(int n){
-	while(n%2==0)prime_factors.push_back(2),n/=2;
-	for(int i=3;i*i<=n;i+=2){
-		while(n%i==0){
-			prime_factors.push_back(i),n/=i;
+	while(n % 2 == 0) prime_factors.push_back(2), n /= 2;
+	for(int i = 3; i*i <= n; i += 2){
+		while(n % i == 0){
+			prime_factors.push_back(i),n /= i;
 		}
 	}
-	if(n>1)prime_factors.push_back(n);
+	if(n > 1)prime_factors.push_back(n);
 }
 ```
 ### Number of Divisors
