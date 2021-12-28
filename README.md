@@ -19,6 +19,7 @@
 - [Euler Totient Function](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#euler-totient-functionphi-function-osqrtn "Counts the number of integers 1 to n which are coprime to n.")
 - [Binary Exponentiation,$n^p$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#binary-exponentiation "calculate a^b with mod or without")
 - [Binary Coefficient,$nCr$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#ncr "calculate nCr with mod or without")
+- [Special Problem](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#special-problem)
 
 ### Graph & Tree
 
