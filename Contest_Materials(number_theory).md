@@ -321,7 +321,61 @@ int moddiv( int a, int b, int n) {
 
 ```
 
+### Special Problem
+```c++
 
+// lpf -> least prime factor.
+// gpf -> greatest prime factor.
+// ndp -> distinct prime factor.
+// tnp -> total number of prime factor.
+// tnd -> total number of divisors.
+// sod -> sum of divisors.
+
+vector<int> prime_factors;
+void PrimeFactorization(int n){
+	while(n % 2 == 0) prime_factors.push_back(2), n /= 2;
+	for(int i = 3; i*i <= n; i += 2){
+		while(n % i == 0){
+			prime_factors.push_back(i),n /= i;
+		}
+	}
+	if(n > 1)prime_factors.push_back(n);
+}
+int binpow(int a,int b)
+{
+	int res = 1;
+	while(b > 0)
+	{
+		if (b % 2) res *= a;
+		a *= a;
+		b >>= 1;
+	}
+	return res;
+}
+int n; cin >> n;
+while (n--) {
+	int x; cin >> x;
+	int lpf = 0, gpf = 0, ndp = 0, tnp = 0,tnd = 1, sod = 1;
+	PrimeFactorization(x);
+	map <int,int> cnt;
+	for (auto it : prime_factors){
+		cnt[it] ++;
+	}
+	// for (auto [key,value]:cnt) cout << key << " " << value <<endl;
+	auto it = cnt.begin();
+	lpf = it -> first;
+	auto it1 = cnt.rbegin();
+	gpf = it1 -> first;
+	ndp = cnt.size();
+	tnp = prime_factors.size();
+	for (auto [key,value] : cnt){
+		tnd *= (value + 1);
+		sod *= (binpow (key, (value + 1)) - 1) / (key - 1);
+	}
+	cout << lpf << " " << gpf << " " << ndp << " " << tnp << " " << tnd << " " << sod << endl;
+	prime_factors.clear();
+}
+```
 
 
 
