@@ -60,10 +60,9 @@ while(k--){
 function<void(int)>dfs=[&](int u)->void{
   vis[u]=true;
   for(auto v:adj[u]){
-    if(!vis[v]){
-      vis[v]=true;
-      dfs(v);
-    }
+    if(vis[v]) continue;
+    vis[v]=true;
+    dfs(v);
   }
 };
 int cnt=0;
