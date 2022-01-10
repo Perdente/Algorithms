@@ -307,8 +307,6 @@ signed main()
 
 
 ```
-
-```
 ### SQRT Decomposition/MO's Algorithm
 > find the distinct elements $(l,r)$
 ```c++
