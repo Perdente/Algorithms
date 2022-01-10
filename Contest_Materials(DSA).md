@@ -220,7 +220,93 @@ signed main()
 
     return 0;
 }
+```
+> Inversion Count( If $i < j$ and $A[i] > A[j]$ then the pair $(i, j)$ is called an inversion of $A$.)
 
+```c++
+// Segment tree over values
+// Here, we cnt the inversions for {x+1, n-1} with segment tree
+// Then after each interations we set xth value to '1' and repeat the process
+
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long int
+const int N = 1e7 + 2;
+
+typedef int item;
+
+struct segtree{
+
+    int size;
+    vector<item> vec;
+    void init(int n) {
+        size = 1;
+        while(size < N) size *= 2;
+        vec.resize(2 * size);
+    }
+
+    item NEUTRAL_ELEMENT = 0;
+
+    item single() {
+        return 1;
+    }
+
+    item merge(item a, item b) {
+        return a + b;
+    }
+
+    void set(int i,int x,int lx,int rx) {
+        if(rx-lx == 1){
+            vec[x] = single();
+            return;
+        }
+        int m=lx + (rx - lx) / 2;
+        if(i < m){
+            set(i, 2*x + 1, lx, m);
+        }else{
+            set(i, 2*x + 2, m, rx);
+        }
+        vec[x] = merge(vec[2*x + 1] , vec[2*x + 2]);
+    }
+
+    void set(int i){
+        set(i, 0, 0, size);
+    }
+
+    item inv_cnt(int x,int l,int r,int lx,int rx) {
+        if(lx >= r or l >= rx) return NEUTRAL_ELEMENT;
+        if(lx >= l and rx <= r) return vec[x];
+        int m = lx + (rx - lx) / 2;
+        int ls = inv_cnt(2*x + 1, l, r, lx, m);
+        int rs = inv_cnt(2*x + 2, l, r, m, rx);
+        return merge( ls, rs);
+    }
+
+    item inv_cnt(int d) {
+        return inv_cnt( 0, d, size, 0, size);
+    }
+};
+
+signed main()
+{
+    ios::sync_with_stdio(0); cin.tie(0);
+    int t; cin >> t;
+    while(t--) {
+        int n; cin >> n;
+        segtree st;
+        st.init(n);
+        int ans = 0;
+        while (n--) {
+            int x; cin >> x; x--;
+            ans += st.inv_cnt(x + 1);
+            st.set(x);
+        }cout << ans << '\n';
+    }
+    return 0;
+}
+
+
+```
 
 ```
 ### SQRT Decomposition/MO's Algorithm
