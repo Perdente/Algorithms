@@ -45,6 +45,40 @@ struct graph{
 
 ```
 ### DFS
+> Directed graph(https://vjudge.net/problem/Aizu-ALDS1_11_B#author=VUPC)
+```c++
+int n; cin >> n;
+vector<int> edges[n + 1], strt(n + 1), end(n + 1);
+vector<bool> vis(n + 1);
+
+for (int i = 0; i < n; ++i) {
+	int id, m; cin >> id >> m;
+	while (m--) {
+	    int x; cin >> x;
+	    edges[id]. push_back(x);
+	}
+}
+int j = 0;
+function<void(int)> dfs = [&](int u) -> void {
+	vis[u] = true;
+	strt[u] = ++j;
+	for(auto v:edges[u]){
+		if(vis[v]) continue;
+		vis[v]=true;
+		dfs(v);
+		end[v] = ++j;
+	}
+};
+for (int i = 1; i <= n; ++i) {
+	if(!vis[i]) {
+	    dfs(i);
+	    end[i] = ++j;
+	}
+	cout << i << " " << strt[i] << " " << end[i] << '\n';
+}
+
+```
+
 >Connected Components
 ```c++
 const int N=1e6+1;
