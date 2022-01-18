@@ -171,6 +171,7 @@ for(int i=1 ;i<=n;++i){
 ```
 ### BFS
 ```c++
+const int oo = 1e12;
 vector<int>edges[n+1];
 while(m--){
 	int u,v;cin>>u>>v;
@@ -179,24 +180,26 @@ while(m--){
 }
 vector<int>dis(n+1);
 vector<bool>vis(n+1);
-auto bfs=[&](int snode){
-	fill(vis.begin(), vis.end(),false);
-	fill(dis.begin(), dis.end(),-1);
-	queue<int> q;
-	q.push(snode);dis[snode]=0;
-	while(!q.empty()){
-	    int u=q.front();
-	    q.pop();
-	    if(vis[u])continue;
-	    vis[u]=true;
-	    for(auto v:edges[u]){
-		if(vis[v])continue;
-		dis[v]=dis[u]+1;
-		q.push(v);
-	    }
-	}
-};
-bfs(1);
+auto bfs = [&] (int snode) {
+        fill(vis.begin(), vis.end(), false);
+        fill(dis.begin(), dis.end(), oo);
+        queue<int> q;
+        q.push(snode); dis[snode] = 0;
+        while(! q.empty()){
+            int u = q.front();
+            q.pop();
+            if(vis[u]) continue;
+            vis[u] = true;
+            for(auto v : edges[u]) {
+                if(vis[v]) continue;
+                if(dis[u] + 1 < dis[v]){
+                    dis[v] = dis[u] + 1;
+                    q.push(v);
+                }
+            }
+        }
+    };
+    bfs(1);
 ```
 > BFS on Grid (4 directions)
 ```c++
