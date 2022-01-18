@@ -170,6 +170,7 @@ for(int i=1 ;i<=n;++i){
 }
 ```
 ### BFS
+> single sourse shortest distance (https://vjudge.net/contest/475737#problem/G)
 ```c++
 const int oo = 1e12;
 vector<int>edges[n+1];
@@ -200,6 +201,50 @@ auto bfs = [&] (int snode) {
         }
     };
     bfs(1);
+```
+> Single source shortest path (https://cses.fi/problemset/task/1667)
+```c++
+    int n, m; cin >> n >> m;
+    vector<int>edges[n + 1];
+    while(m--){
+        int u, v; cin >> u >> v;
+        edges[u].push_back(v);
+        edges[v].push_back(u);
+    }
+    vector<int> parent(n + 1, -1);
+    vector<bool> vis(n + 1);
+    auto bfs = [&] (int snode) {
+        fill(vis.begin(), vis.end(), false);
+        queue<int> q;
+        q.push(snode);
+        while(! q.empty()){
+            int u = q.front();
+            q.pop();
+            vis[u] = true;
+            for(auto v : edges[u]) {
+                if(vis[v]) continue;
+                vis[v] = true;
+                parent[v] = u;
+                q.push(v);
+ 
+            }
+        }
+    };
+    bfs(1);
+    if( parent[n] == -1) {
+        cout << "IMPOSSIBLE\n"; return;
+    }
+    int node = n;
+    vector<int> path;
+    path.push_back(n);
+    while(node != 1) {
+        path.push_back(parent[node]);
+        node = parent[node];
+    }
+    cout << (int) path.size() << '\n';
+    for (int i = path.size() - 1; i >= 0; --i) {
+        cout << path[i] << " ";
+    }cout << endl;
 ```
 > BFS on Grid (4 directions)
 ```c++
