@@ -329,6 +329,55 @@ while ( cin >> n >> m and n != 0 and m != 0) {
 	cout << ans << '\n';
 	}
 }
+```
+### Multi Source BFS(https://www.codechef.com/problems/SNSOCIAL)
+```c++
+void malena(){
+    int n, m; cin >> n >> m;
+    vector<vector<int>> grid(n, vector<int> (m));
+    vector<vector<int>> level(n, vector<int> (m));
+    int mx = 0;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cin >> grid[i][j];
+            mx = max(mx, grid[i][j]);
+        }
+    }
+    int H = n;
+    int W = m;
+    int ans = 0;
+
+    auto inside = [&](int row,int col) {
+        return 0 <= row and row < H and 0 <= col and col < W;
+    };
+
+    vector<pair<int,int>> directions {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {1, -1}, {-1, 1}, {-1, -1}, {1, 1}};
+    vector<vector<bool>> vis(H, vector<bool> (W));
+    queue<pair<int, int> > q;
+    for(int row = 0; row < H; ++row){
+        for(int col = 0; col < W; ++col){
+            if(grid[row][col] == mx){
+                vis[row][col] = true;
+                q.push({row, col});
+            }
+        }
+    }
+    while(! q.empty()) {
+        pair<int,int> p = q.front();
+        q.pop();
+        for(pair<int,int> dir : directions) {
+            int new_row = p.first + dir.first;
+            int new_col = p.second + dir.second;
+            if(inside(new_row,new_col) and !vis[new_row][new_col]){
+                vis[new_row][new_col] = true;
+                level[new_row][new_col] = level[p.first][p.second] + 1;
+                q.push({new_row, new_col});
+                ans = max(ans, level[new_row][new_col]);
+            }
+        }
+    }
+    cout << ans << '\n';
+}
 
 ```
 ### Dijsktra's Algorithm
