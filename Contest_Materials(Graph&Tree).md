@@ -44,8 +44,8 @@ struct graph{
 };
 
 ```
-### DFS
-> Directed graph(https://vjudge.net/problem/Aizu-ALDS1_11_B#author=VUPC)
+## DFS
+### Directed graph(https://vjudge.net/problem/Aizu-ALDS1_11_B#author=VUPC)
 ```c++
 int n; cin >> n;
 vector<int> edges[n + 1], strt(n + 1), end(n + 1);
@@ -79,7 +79,7 @@ for (int i = 1; i <= n; ++i) {
 
 ```
 
->Connected Components
+### Connected Components
 ```c++
 const int N=1e6+1;
 vector<int>adj[N],dis(N);
@@ -108,7 +108,7 @@ for(int i=1;i<=n;++i){
 }
 cout<<cnt<<'\n';
 ```
->Bipartite Coloring
+### Bipartite Coloring
 ```c++
 vector<vector<int>>graph;
 vector<int>color;
@@ -140,7 +140,7 @@ for(int i=1;i<=n;++i){
   }
 }
 ```
->Cycle Detection
+### Cycle Detection
 ```c++
 vector<int> adj[n+1];
 vector<bool> vis(n+1);
@@ -169,8 +169,8 @@ for(int i=1 ;i<=n;++i){
 	}
 }
 ```
-### BFS
-> single sourse shortest distance (https://vjudge.net/contest/475737#problem/G)
+## BFS
+### single sourse shortest distance (https://vjudge.net/contest/475737#problem/G)
 ```c++
 const int oo = 1e12;
 vector<int>edges[n+1];
@@ -202,7 +202,7 @@ auto bfs = [&] (int snode) {
     };
     bfs(1);
 ```
-> Single source shortest path (https://cses.fi/problemset/task/1667)
+### Single source shortest path (https://cses.fi/problemset/task/1667)
 ```c++
     int n, m; cin >> n >> m;
     vector<int>edges[n + 1];
@@ -246,7 +246,7 @@ auto bfs = [&] (int snode) {
         cout << path[i] << " ";
     }cout << endl;
 ```
-> BFS on Grid (4 directions)
+### BFS on Grid (4 directions)
 ```c++
 int H=grid.size();
 int W=grid[0].size();
@@ -282,7 +282,7 @@ for(int row=0;row<H;++row){
     }
 }
 ```
-> BFS On Grid (8 directions https://vjudge.net/contest/475737#problem/Q)
+### BFS On Grid (8 directions https://vjudge.net/contest/475737#problem/Q)
 ```c++
 
 int n, m;
