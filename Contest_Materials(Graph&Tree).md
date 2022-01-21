@@ -378,7 +378,194 @@ void malena(){
     }
     cout << ans << '\n';
 }
+```
+### Labyrinth(https://cses.fi/problemset/task/1193)
+> You are given a map of a labyrinth, and your task is to find a path from start to end. You can walk left, right, up and down.
 
+```c++
+void malena(){
+    int n, m; cin >> n >> m;
+    string grid[n];
+    queue<pair<int, int>> q;
+    vector< vector< pair<int, int>>> path(n);
+    vector< vector< bool>> vis(n, vector<bool> (m));
+    vector< pair< int, int>> directions{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+    pair<int, int> end, start;
+    for (int i = 0; i < n; ++i) {
+        cin >> grid[i];
+        for (int j = 0; j < m; ++j) {
+            path[i].push_back( {-1, -1});
+            if (grid[i][j] =='A'){
+                start = {i, j};
+                q.push({i, j});
+                vis[i][j] = true;
+            }
+            if(grid[i][j] == 'B'){
+                end = {i, j};
+            }
+            if(grid[i][j] == '#'){
+                vis[i][j] = true;
+            }
+        }
+    }
+ 
+    auto inside = [&] (int row, int col) {
+        return 0 <= row and row < n and 0 <= col and col < m;
+    };
+ 
+    while (!q.empty()) {
+        int old_row = q.front().first;
+        int old_col = q.front().second;
+        q.pop();
+        for (pair<int,int> dir: directions) {
+            int new_row = old_row + dir.first;
+            int new_col = old_col + dir.second;
+            if (inside(new_row, new_col) and !vis[new_row][new_col]) {
+                vis[new_row][new_col] = true;
+                path[new_row][new_col] = {dir.first, dir.second};
+                q.push({new_row, new_col});
+            }
+        }
+    }
+    if(!vis[end.first][end.second]) {cout << "NO\n"; return;}
+    cout << "YES" << '\n';
+    vector<pair<int, int>> ans;
+    while (end.first != start.first or end.second != start.second) {
+        ans.push_back ( path[end.first][end.second]);
+        end.first -= ans.back().first;
+        end.second -= ans.back().second;
+    }
+    reverse(ans.begin(), ans.end());
+    cout << (int) ans.size() << '\n';
+    for (auto [x, y]: ans) {
+        if (x == 1 and y == 0) cout << 'D';
+        else if (x == -1 and y == 0) cout << 'U';
+        else if (x == 0 and y == 1) cout << 'R';
+        else cout << 'L';
+    }
+    cout << '\n';
+}
+```
+
+### Lava Flow(https://cses.fi/problemset/task/1194/)
+> You and some monsters are in a labyrinth. When taking a step to some direction in the labyrinth, each monster may simultaneously take one as well. Your goal is to reach one of the boundary squares without ever sharing a square with a monster.
+
+```c++
+// https://www.youtube.com/watch?v=hB59dxdDLII
+const int oo = 1e9;
+
+void malena(){
+    int n, m; cin >> n >> m;
+    string grid[n];
+
+    queue< pair< pair< int, int>, int>> monsters, player;
+    map< pair< int, int>, pair<int, int>> parent;
+    vector< vector< int>> lava_time(n, vector<int> (m));
+    vector< pair< int, int>> directions{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
+    for (int i = 0; i < n; ++i) {
+        cin >> grid[i];
+        for (int j = 0; j < m; ++j) {
+            if (grid[i][j] =='M'){
+                monsters.push({{i, j}, 0});
+                lava_time[i][j] = 0;
+            } else if (grid[i][j] == '#'){
+                lava_time[i][j] = 0;
+            } else if (grid[i][j] == 'A'){
+                lava_time[i][j] = 0;
+                player.push({{i, j}, 0});
+                parent[{i, j}] = {-1, -1};
+            }else {
+                lava_time[i][j] = oo;
+            }
+        }
+    }
+
+    auto isInside = [&] (int row, int col) {
+        return 0 <= row and row < n and 0 <= col and col < m;
+    };
+    // if the grid value is not already consumed by lava then its valid
+    auto isValid = [&] (int row, int col, int timer) {
+        return lava_time[row][col] > timer;
+    };
+    // the edge points
+    auto isEscapePoint = [&] (int row, int col) {
+        return row == 0 or row == n - 1 or col == 0 or col == m - 1;
+    };
+
+    // if the player is already on the edge of the grid ??
+    if(isEscapePoint(player.front().first.first, player.front().first.second)) {
+        cout << "YES\n" << "0\n"; return;
+    }
+
+    // for each monsters first we calculate how much space it consumes with certain time
+    // using multisource bfs method
+    while (!monsters.empty()) {
+        int old_row = monsters.front(). first. first;
+        int old_col = monsters.front(). first. second;
+        int timer = monsters.front(). second; // the time to fill that grid via monster
+        timer++;
+        monsters.pop();
+        for (pair<int,int> dir: directions) {
+            int new_row = old_row + dir.first;
+            int new_col = old_col + dir.second;
+            if (isInside(new_row, new_col) and isValid(new_row, new_col, timer)) {
+                lava_time[new_row][new_col] = timer;
+                monsters.push({{new_row, new_col}, timer});
+            }
+        }
+    }
+    bool found = false;
+    pair<int, int> end;
+    while (!player.empty() and !found) {
+        int old_row = player.front(). first. first;
+        int old_col = player.front(). first. second;
+        int timer = player.front(). second;
+        timer++;
+        player.pop();
+        for (pair<int,int> dir: directions) {
+            int new_row = old_row + dir.first;
+            int new_col = old_col + dir.second;
+            if (isEscapePoint(new_row, new_col) and isValid(new_row, new_col, timer)) {
+                parent[{new_row, new_col}] = {old_row, old_col};
+                found = true;
+                end = {new_row, new_col}; break;
+            }
+            if (isValid(new_row, new_col, timer)) {
+                parent[{new_row, new_col}] = {old_row, old_col};
+                lava_time[new_row][new_col] = timer;
+                player.push({{new_row, new_col}, timer});
+            }
+        }
+
+    }
+    if (!found) {
+        cout << "NO" << '\n'; return;
+    }
+    cout << "YES" << '\n';
+    pair<int, int> end_parent = parent[end];
+    pair<int, int> start = {-1, -1};
+    string ans =  "";
+    while (end_parent != start) {
+        int x1 = end.first,  x2 = end_parent.first;
+        int y1 = end.second, y2 = end_parent.second;
+        if (x1 - x2 == 0 and y1 - y2 == 1) {
+            ans += 'R';
+        } else if (x1 - x2 == 1 and y1 - y2 == 0) {
+            ans += 'D';
+        } else if (x1 - x2 == -1 and y1 - y2 == 0) {
+            ans += 'U';
+        } else {
+            ans += 'L';
+        }
+        end = parent[end];
+        end_parent = parent[end_parent];
+    }
+    reverse(ans.begin(), ans.end());
+    cout << (int) ans.size() << '\n';
+    for (auto ch : ans) cout << ch;
+    cout << '\n';
+}
 ```
 ### Dijsktra's Algorithm
 ```c++
