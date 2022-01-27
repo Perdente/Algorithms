@@ -100,3 +100,21 @@ for (auto it: v) {
 }
 cout << ans + (cnt[0] * (cnt[0] - 1) / 2)<< '\n';
 ```
+### Count Subarray Sums Divisible by K (https://leetcode.com/problems/subarray-sums-divisible-by-k/)
+```c++
+vector<int> presum;
+  int temp = 0;
+  for (auto it: nums) {
+      temp += it;
+      presum.push_back(temp);
+  }
+  int ans = 0;
+  map <int, int> cnt;
+  cnt[0] = 1;
+  for (auto it: presum) {
+      ans += cnt[((it % k) + k) % k];
+      cnt[((it % k) + k) % k]++;
+  }
+  return ans;
+}
+```
