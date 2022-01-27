@@ -86,3 +86,17 @@ while(!st.empty()){
   st.pop();
 }
 ```
+### Count pairs in array whose sum is divisible by $K$
+
+```c++
+int n, k; cin >> n >> k;
+vector<int> v(n);
+map <int, int> cnt;
+for (auto &it: v) cin >> it, it %= k;
+int ans = 0;
+for (auto it: v) {
+    ans += cnt[k - it];
+    cnt[it]++;
+}
+cout << ans + (cnt[0] * (cnt[0] - 1) / 2)<< '\n';
+```
