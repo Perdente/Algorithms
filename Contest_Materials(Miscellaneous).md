@@ -112,7 +112,7 @@ vector<int> presum;
   map <int, int> cnt;
   cnt[0] = 1;
   for (auto it: presum) {
-      ans += cnt[((it % k) + k) % k];
+      ans += cnt[((it % k) + k) % k]; // for negative numbers
       cnt[((it % k) + k) % k]++;
   }
   return ans;
