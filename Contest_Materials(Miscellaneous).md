@@ -118,3 +118,23 @@ vector<int> presum;
   return ans;
 }
 ```
+### Subset with no pair sum divisible by $K$
+```c++
+/*
+https://www.hackerrank.com/challenges/non-divisible-subset/problem
+> if sum of two numbers is divisible by K, then if one of them gives remainder i, other will give remainder (K – i).
+> a subset with no pair sum divisible by K must include either elements with remainder f[i] or with remainder f[K – i]
+> so we include max (f[i], f[k - i])
+> we must include atmost 1 numbers whose remainder is either 0 or K/2 as they can be divisible otherwise
+*/
+int n, k; cin >> n >> k;
+vector<int> v(n);
+map <int, int> cnt;
+for (auto &it: v) cin >> it, cnt[it % k]++;
+int ans = bool(cnt[0]);
+if (k % 2 == 0) cnt[k / 2] = 1;
+for (int i = 1; i <= k / 2; ++i) {
+    ans += max (cnt[i], cnt[k - i]);
+}
+cout << ans << '\n';
+```
