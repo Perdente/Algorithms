@@ -12,6 +12,7 @@ bool isPrime(int n){
 
 ### Sieve of Eratosthenes $\mathcal{O}(mx log(log (mx)))$
 ```C++
+const int mx = 1e6;
 vector<bool> isPrime(mx+1,true);
 vector<int> primes;
 void Sieve(){
