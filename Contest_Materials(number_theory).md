@@ -43,6 +43,34 @@ void PrimeFactorization(int n){
 	if(n > 1)prime_factors.push_back(n);
 }
 ```
+### Prime Factorization $\mathcal{O}(log(n))$
+```C++
+const int N = 1e6;
+
+int spf[N + 5];
+void prime_factorization(){
+    for (int i = 1; i <= N; ++i) spf[i] = -1;
+    for (int i = 2; i <= N; ++i) {
+        if (spf[i] == -1) {
+            for (int j = i; j <= N; j += i) {
+                if (spf[j] == -1) spf[j] = i;
+            }
+        }
+    }
+}
+vector<int> getFactors(int n) {
+    vector<int> pr_factos;
+    while (n != 1) {
+        pr_factos.push_back(spf[n]);
+        n /= spf[n];
+    }
+    return pr_factos;
+}
+//vector<int> ans = getFactors(125);
+//for (auto val: ans) cout << val << " ";
+//    cout << '\n';
+//prime_factorization();
+```
 ### Number of Divisors
 > using sieve $\mathcal{O}(mx log(log mx))$
 ```C++
