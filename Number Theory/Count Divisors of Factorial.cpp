@@ -28,6 +28,7 @@ void malena(){
     int ans = 1;
     for (auto value : primes) {
         if (value > n) continue;
+        // Legendre 
         int k = 0, m = n;
         while (m) {
             k += m / value;
