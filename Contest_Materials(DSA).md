@@ -463,17 +463,17 @@ class DSU{
 > - $l$ is some value/index which can never be the answer and $r$ is some value/index which always gives the answer
 > - $good(m)$ function determines which element is good or bad.
 ```c++
-auto good=[&](int m){
+auto good = [&] (int m) {
 
-};
-int l=0; // l is bad 
-int r=1e6;// r is good
-while(r>l+1){
- int m=l+(r-l)/2;
-    if(good(m)) r=m;
-    else l=m;
-}
-cout<<r<<endl;
+    };
+    int l = 0; // l is bad 
+    int r = 1e6;// r is good
+    while(r > l + 1){
+     int m = l + (r - l) / 2;
+        if (good(m)) r = m;
+        else l = m;
+    }
+    cout << r << endl;
 ```
 ### Ordered Set $O(log(n))$
 > - _order_of_key$(k)$_ : Number of item strictly smaller than $k$
