@@ -32,6 +32,7 @@ void Sieve(){
 ```C++
 vector<int> prime_factors;
 void PrimeFactorization(int n){
+	prime_factors.clear();
 	while(n % 2 == 0) prime_factors.push_back(2), n /= 2;
 	for(int i = 3; i*i <= n; i += 2){
 		while(n % i == 0){
