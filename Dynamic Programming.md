@@ -264,6 +264,39 @@ cout<<dp[1]<<endl;
 </ul>
 </details>
 
+# Fibonacy Numbers
+> recursive
+
+```c++
+const int N = 1e5 + 5;
+int F[N];
+
+int fibonacy(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    if (F[n] != -1) return F[n];
+    F[n] = fibonacy(n - 1) + fibonacy(n - 2);
+    return F[n];
+}
+    
+int n; cin >> n;
+memset(F, -1, sizeof F);
+cout << fibonacy(n) << '\n';    
+```
+
+> iterative
+```c++
+const int N = 1e5 + 5;
+int F[N];
+    
+int n; cin >> n;
+F[0] = 0, F[1] = 1;
+for (int i = 2; i <= n; ++i) {
+    F[i] = F[i - 1] + F[i - 2];
+}
+cout << F[n] << '\n';    
+```
+
 
 # Coin Change
 
