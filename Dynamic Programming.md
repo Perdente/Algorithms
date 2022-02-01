@@ -297,7 +297,74 @@ for (int i = 2; i <= n; ++i) {
 cout << F[n] << '\n';    
 ```
 
+# Dice Combination (CSES)
+> Your task is to count the number of ways to construct sum $n$ by throwing a dice one or more times. Each throw produces an outcome between $1$ and $6$.
 
+<details>
+<summary>recursive</summary>
+<ul>
+  
+```c++
+const int N = 1e6 + 5, mod = 1e9 + 7;
+int dp[N];
+ 
+// dp[i] - how many ways to show i as a sum of {1, 2, 3, 4, 5, 6}
+// fun(n) = {1 + fun(n - 1)} + {2 + fun(n - 2)} + {3 + fun(n - 3)} + ....
+ 
+/*
+3 -> 1 + fun(2) // 2
+  -> 2 + fun(1) // 1
+  -> 3 + fun(0) // fun(0) is 1 otherwise this step won't return any value
+*/
+ 
+int fun(int n) {
+    if (n == 0) return 1;
+    if (dp[n] != -1) return dp[n];
+    int sum = 0;
+    for (int i = 1; i <= 6; ++i) {
+        if (n - i >= 0) {
+            sum += fun(n - i);
+            sum %= mod;
+        }
+    }
+    return dp[n] = sum;
+}
+ 
+void malena() {
+    int n; cin >> n;
+    memset(dp, -1, sizeof dp);
+    cout << fun(n) << '\n';
+}
+```
+</ul>
+</details>
+    
+<details>
+<summary>iterative</summary>
+<ul>
+  
+```c++
+int sum;cin>>sum;
+vector<int> dice(6);
+iota(dice.begin(), dice.end(),1);
+vector<int> dp(sum+1);
+dp[0]=1;
+for(int i=1;i<=sum;++i){
+    for(int j:dice){
+        if(i-j>=0){
+            dp[i]+=dp[i-j];
+            dp[i]%=mod;
+        }
+    }
+}
+cout<<dp[sum]<<'\n';
+```
+</ul>
+</details>
+								
+   
+                
+  
 # Coin Change
 
 ### Minimizing Coin
