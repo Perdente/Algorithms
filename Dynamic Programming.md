@@ -470,7 +470,34 @@ cout<<dp[sum]<<'\n';
 > You have decided that the total price of your purchases will be at most $x$. What is the maximum number of pages you can buy? You can buy each book at most once.
 
 <details>
-<summary>Code</summary>
+<summary>recursive</summary>
+<ul>
+  
+```c++
+// https://atcoder.jp/contests/dp/tasks/dp_d
+const int N = 1e2 + 5, mx = 1e5 + 5;
+int dp[N][mx];
+int weight[N], value[N];
+
+int fun(int n, int W) {
+    if (n == 0) return 0;
+    if (dp[n][W] != -1) return dp[n][W];
+    int sum = fun(n - 1, W);
+    if(W - weight[n] >= 0) sum = max(sum, fun(n - 1, W - weight[n]) + value[n]);
+    return dp[n][W] = sum;
+}
+int n, W; cin >> n >> W;
+for (int i = 1; i <= n; ++i) {
+    cin >> weight[i] >> value[i];
+}
+memset(dp, -1, sizeof dp);
+cout << fun(n, W) << '\n';
+```
+</ul>
+</details>
+	
+<details>
+<summary>iterative</summary>
 <ul>
   
 ```c++
