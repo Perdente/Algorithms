@@ -773,7 +773,7 @@ cout<<Strictly_LIS(v)<<'\n';
 - Replace one character in the string.
 >For example, the edit distance between $LOVE$ and $MOVIE$ is $2$, because you can first replace $L$ with $M$, and then add $I$.
 <details>
-<summary>Code</summary>
+<summary>iterative</summary>
 <ul>
   
 ```c++
@@ -797,7 +797,40 @@ cout<<dp[n][m]<<endl;
   
 </ul>
 </details>
+
+<details>
+<summary>recursive</summary>
+<ul>
   
+```c++
+const int N = 5005, oo = 1e9;
+string s1, s2;
+int dp[N][N];
+ 
+int fun(int i, int j) {
+    int n = s1.size(), m = s2.size();
+    if (dp[i][j] != -1) return dp[i][j];
+    if (i == n and j == m) return 0;
+    if (i == n) return dp[i][j] = m - j;
+    if (j == m) return dp[i][j] = n - i;
+    if (s1[i] == s2[j]) return dp[i][j] = fun(i + 1, j + 1);
+    int cost = oo;
+    cost = min (cost, fun(i + 1, j + 1));
+    cost = min(cost, fun(i + 1, j));
+    cost = min(cost, fun(i, j + 1));
+    return dp[i][j] = 1 + cost;
+}
+ 
+void malena() {
+    cin >> s1 >> s2;
+    memset(dp, -1, sizeof dp);
+    cout << fun(0, 0) << '\n';
+}
+ ```
+  
+</ul>
+</details>
+
 >We have an integer sequence $A$ of length $N$ and an integer sequence $B$ of length $M$.Takahashi will make a new sequence $A'$ by removing some elements (possibly zero or all) from $A$ and concatenating the remaining elements.Similarly, he will make another new sequence $B'$ by removing some elements (possibly zero or all) from $B$ and concatenating the remaining elements.
   
 >Here, he will remove elements so that $|A'|=|B'|$ ($∣s∣$ denotes the length of $s$ for a sequence $s$.)Let $x$ be the total number of elements removed from $A$ and $B$, and $y$ be the number of integers $i$ such that $1≤i≤|A'|$ and $A'_i \neq B'_i$ . Find minimum value of $x+y$
