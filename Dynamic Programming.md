@@ -494,7 +494,49 @@ cout<<dp[sum]<<'\n';
 ```
 </ul>
 </details>
+
+### Make Sum using Fixed coins
+
+>Your task is to calculate the number of distinct ways you can produce a money sum $x$ using the available coins.
+>For example, if the coins are {$1,2,5$} and coin $1$ can be used atmost $3$ times similarly coin $2$ upto $2$ and coin $5$ upto $1$ times and the desired sum is $5$, there are $3$ ways:
+> $(1, 1, 1, 2), (1, 2, 2), (5)$
+
+<details>
+<summary>Code</summary>
+<ul>
   
+```c++
+// https://lightoj.com/problem/coin-change-i
+const int N = 55, K = 1e3 + 5, mod = 100000007;
+int dp[N][K], coins[N], vals[N];
+int n, sum;
+
+int fun(int n, int sum) {
+    if (n == -1) return 0;
+    if (sum == 0) return 1;
+    if (dp[n][sum] != -1) return dp[n][sum];
+    int res = 0;
+    for (int j = 0; j <= vals[n]; ++j) {
+        if (sum - (coins[n] * j) >= 0) {
+            res = (res + fun(n - 1, sum - (coins[n] * j))) % mod;
+        }
+    }
+    return dp[n][sum] = res;
+}
+
+void malena() {
+    cin >> n >> sum;
+    for (int i = 1; i <= n; ++i) cin >> coins[i];
+
+    for (int i = 1; i <= n; ++i) cin >> vals[i];
+
+    memset(dp, -1, sizeof dp);
+    cout << fun(n, sum) << '\n';
+}
+```
+</ul>
+</details>
+
 # Knapsack
 > You are in a book shop which sells $n$ different books. You know the price and number of pages of each book.
 > You have decided that the total price of your purchases will be at most $x$. What is the maximum number of pages you can buy? You can buy each book at most once.
