@@ -144,6 +144,36 @@ for(int i=0;i<n;++i){
 }
 cout<<*max_element(dp.begin(), dp.end())<<'\n';
 ```   
+```c++
+const int N = 1e6 + 5, oo = 1e9;
+int dp[N][3];
+int activ[N][3];
+
+int fun(int n, int prev) {
+    if(n == 0) return 0;
+    if (dp[n][prev] != -1) return dp[n][prev];
+    int total = 0;
+    if (prev != 0) {
+        total = max (total, activ[n][0] + fun(n - 1, 0));
+    }
+    if (prev != 1) {
+        total = max (total, activ[n][1] + fun(n - 1, 1));
+    }
+    if (prev != 2) {
+        total = max (total, activ[n][2] + fun(n - 1, 2));
+    }
+    return dp[n][prev] = total;
+}
+
+void malena() {
+    int n; cin >> n;
+    for (int i = 1; i <= n; ++i) {
+        cin >> activ[i][0] >> activ[i][1] >> activ[i][2];
+    }
+    memset(dp, -1, sizeof dp);
+    cout << fun(n, 3) << '\n';
+}
+```	
 
 </ul>
 </details>
