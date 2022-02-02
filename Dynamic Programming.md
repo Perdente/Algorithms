@@ -512,8 +512,8 @@ int dp[N][K], coins[N], vals[N];
 int n, sum;
 
 int fun(int n, int sum) {
-    if (n == -1) return 0;
     if (sum == 0) return 1;
+    if (n == 0) return 0;
     if (dp[n][sum] != -1) return dp[n][sum];
     int res = 0;
     for (int j = 0; j <= vals[n]; ++j) {
