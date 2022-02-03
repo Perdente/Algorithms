@@ -1261,11 +1261,43 @@ cout<<solve(x,y,z)<<endl;
 
 </ul>
 </details>
+</ul>
+</details>
 
+# Dp on Trees
+> Given a rooted tree with $n$ nodes. Find the sizes of all substrees in $O(n)$.
+<details>
+<summary>Code</summary>
+<ul>
 
+```c++
+const int N = 2e5 + 5;
+vector<int> tree[N];
+int subtree[N];
 
+void dfs(int u, int par) {
+    subtree[u] = 1;
+    for (auto v: tree[u]) {
+        if (v != par) {
+            dfs(v, u);
+            subtree[u] += subtree[v];
+        }
+    }
+}
 
-  
+void malena() {
+    int n, m; cin >> n >> m;
+    for (int i = 1; i <= m; ++i) {
+        int u, v; cin >> u >> v;
+        tree[u].push_back(v);
+        tree[v].push_back(u);
+    }
+    dfs(1, 0);
+    for (int i = 1; i <= n; ++i) {
+        cout << subtree[i] << " ";
+    }cout << '\n';
+}
+
 </ul>
 </details>
 
