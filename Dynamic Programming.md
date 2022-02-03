@@ -902,9 +902,9 @@ int minPathSum(vector<vector<int>>& grid) {
 </ul>
 </details>
 
-> Consider an $n$×$m$ grid whose squares may have traps $$#$$.Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
+> Consider an $n$×$m$ grid whose squares may have traps $#$ .Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
 <details>
-<summary>Code</summary>
+<summary>iterative</summary>
 <ul>
   
 ```c++
@@ -933,7 +933,41 @@ cout<<dp[n-1][m-1]<<endl;
 ```
 </ul>
 </details>
+
+<details>
+<summary>recursive</summary>
+<ul>
   
+```c++
+const int N = 1e3 + 5, mod = 1e9 + 7;
+int n, m;
+char arr[N][N];
+int dp[N][N];
+
+int fun(int i, int j) {
+    if (i > n or j > m) return 0;
+    if (i == n and j == m) return (arr[i][j] == '.');
+    if (dp[i][j] != -1) return dp[i][j];
+    int x = 0, y = 0;
+    if(i + 1 <= n and arr[i + 1][j] == '.') x = fun(i + 1, j);
+    if(j + 1 <= m and arr[i][j + 1] == '.') y = fun(i, j + 1);
+    return dp[i][j] = (x + y) % mod;
+}
+
+void malena() {
+    cin >> n >> m;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            cin >> arr[i][j];
+        }
+    }
+    memset(dp, -1, sizeof dp);
+    cout << fun(1, 1) << '\n';
+}
+```
+</ul>
+</details>
+
 > Given an $m$ x $n$ integers matrix, return the length of the longest increasing path in matrix.From each cell, you can either move in four directions: left, right, up, or down.You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
   
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/gtB3JRS/grid1.jpg" alt="grid1" border="0"></a>
