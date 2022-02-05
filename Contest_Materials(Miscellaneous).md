@@ -23,6 +23,26 @@
   };
 ```
 # Array
+### Co-ordinate Compression
+```c++
+int n; cin >> n;
+vector<int> v(n);
+for (auto &val: v) cin >> val;
+vector<int> u = v;
+sort(u.begin(), u.end());
+u.resize(unique(u.begin(), u.end()) - u.begin());
+for (int i = 0; i < n; ++i) {
+    v[i] = lower_bound(u.begin(), u.end(), v[i]) - u.begin();
+}
+for (auto i: v) cout << i << " ";
+/*
+in-6
+109 592 411 51 135 355
+ou-1 5 4 0 2 3 
+*/
+```
+
+
 ### Nearest non-zero value in circular array
 ```c++
 //https://www.codechef.com/START11B/problems/POSSPEW
