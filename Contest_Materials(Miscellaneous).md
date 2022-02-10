@@ -41,7 +41,36 @@ in-6
 ou-1 5 4 0 2 3 
 */
 ```
+### Local Maxima - Minima
+```c++
+int n; cin >> n;
+vector<int> v(n);
+for (int i = 0; i < n; ++i) {
+    cin >> v[i];
+}
+vector<int> mi, ma;
+if (v[0] < v[1]) mi.push_back(0);
+if (v[0] > v[1]) ma.push_back(0);
+for (int i = 1; i < n - 1; ++i) {
+    if (v[i] < v[i - 1] and v[i] < v[i + 1]) mi.push_back(i);
+    else if (v[i] > v[i - 1] and v[i] > v[i + 1]) ma.push_back(i);
+}
+if (v[n - 1] < v[n - 2]) mi.push_back(n - 1);
+if (v[n - 1] > v[n - 2]) ma.push_back(n - 1);
+for (auto val: mi) cout << val << " ";
+    cout << '\n';
+for (auto val: ma) cout << val << " ";
+cout << '\n';
 
+/*
+9
+1 2 3 2 1 2 3 2 1
+
+> 0 4 8 
+> 2 6 
+
+*/
+```
 
 ### Nearest non-zero value in circular array
 ```c++
