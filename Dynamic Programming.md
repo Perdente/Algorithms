@@ -290,7 +290,45 @@ cout<<dp[1]<<endl;
 
 </ul>
 </details>
-   
+
+
+<ul>
+<details>
+  <summary>Unique Binary Search Trees </summary>
+<ul>
+     Given an integer $n$, return the number of structurally unique _BST_ (binary search trees) which has exactly $n$ nodes of unique values from $1$ to $n$.
+	
+![](https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg)
+
+> Explanation: Here, for each $i$ th root we compute how many children it has in _left_ subtree and _right_ subtree. if $n = 4$ and $i = 3$ then it has $3 - 1$ children in left and $4-i$ in right subtree and multiply them And we sum them up untill $n$.
+
+  > State: $dp[i] = $ total unique binary trees for root $i$
+  
+  > Recurrence :  $$ dp[i] = \sum dp[j-1] * dp[i - j] $$
+  
+```c++
+class Solution {
+public:
+    int numTrees(int n) {
+        
+        /*
+         numTrees(4) = numTrees(0) * numTrees(3) + numTrees(1) * numTrees(2) + numTrees(2) * numTrees(1) + numTrees(3) * numTrees(0). 
+        */
+        vector<int> dp(n + 1);
+        dp[0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                dp[i] += dp[j - 1] * dp[i - j];
+            }
+        }
+        return dp[n];
+    }
+};
+```   
+
+</ul>
+</details>
+
 </ul>
 </details>
 
