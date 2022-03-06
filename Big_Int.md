@@ -3,7 +3,7 @@
 - If the $size$ is not same, then we scan for $min(a.size(), b.size())$ and check if $i$ th character from string $a$ is less than $i$ th character from string $b$.
 - If both strings are same till $min(a.size(), b.size())$ then minimum sized string is the _smaller_ one.
 
-ref: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/C
+[ref](https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/C) 
 ```c++
 string a, b; cin >> a >> b;
 int n = a.size(), m = b.size();
@@ -23,7 +23,7 @@ cout << (n < m ? a : b) << '\n';
 ### Maximum Subsequence without having adjacent character similar.
 - As adjacent characters can't be equal. We must store the previous character we've taken so far.
 - Then, a linear scan is enough
-ref : https://www.geeksforgeeks.org/longest-subsequence-with-different-adjacent-characters/
+[ref](https://www.geeksforgeeks.org/longest-subsequence-with-different-adjacent-characters/) 
 ```c++
 int n; cin >> n;
 string s; cin >> s;
