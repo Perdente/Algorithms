@@ -1,3 +1,25 @@
+### Condition for _a_ string to be $lexicographically$ $smaller$ than _b_ string
+- If both strings are same size then $i$ th character from string $a$ is less than $i$ th character from string $b$.
+- If the $size$ is not same, then we scan for $min(a.size(), b.size())$ and check if $i$ th character from string $a$ is less than $i$ th character from string $b$.
+- If both strings are same till $min(a.size(), b.size())$ then minimum sized string is the _smaller_ one.
+
+```c++
+string a, b; cin >> a >> b;
+int n = a.size(), m = b.size();
+for (int i = 0; i < min(n, m); ++i) {
+    if (a[i] < b[i]) {
+        cout << a << '\n'; return;
+    } else if (a[i] > b[i]) {
+        cout << b << '\n'; return;
+    }
+}
+if (n == m) {
+    cout << "Both are same, bitch :)" << '\n'; return;
+}
+cout << (n < m ? a : b) << '\n';
+```
+
+
 ### Print Lexicographically Bigger String
 ```c++
 auto lexicographically_larger=[&](string str1,string str2)->string{
