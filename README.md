@@ -43,6 +43,7 @@
 
 ### Strings
 - [is Lexicographically smaller](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#condition-for-a-string-to-be-lexicographically-smaller-than-b-string)
+- [Maximum substring without adjacent element similar](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#maximum-subsequence-without-having-adjacent-character-similar)
 - [Print lexicographically bigger](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#print-lexicographically-bigger-string)
 - [Adding big integers](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#addition-of-two-big-integer-or-strings)
 - [Subtraction of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#subtraction-of-two-big-integer-or-strings)
