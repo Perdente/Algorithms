@@ -23,7 +23,9 @@ cout << (n < m ? a : b) << '\n';
 ### Maximum Subsequence without having adjacent character similar.
 - As adjacent characters can't be equal. We must store the previous character we've taken so far.
 - Then, a linear scan is enough
+
 [ref](https://www.geeksforgeeks.org/longest-subsequence-with-different-adjacent-characters/) 
+
 ```c++
 int n; cin >> n;
 string s; cin >> s;
