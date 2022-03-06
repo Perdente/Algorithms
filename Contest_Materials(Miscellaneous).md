@@ -23,6 +23,29 @@
   };
 ```
 # Array
+### Shift $left$ and $right$
+
+```c++
+int n, k; cin >> n >> k;
+vector<int> v(n);
+for (auto &it: v) cin >> it;
+vector<int> left_shift(n), right_shift(n);
+for (int i = 0; i < n; ++i) {
+    left_shift[i] = v[(i + k) % n];
+    right_shift[(i + k) % n] = v[i];
+}
+for (auto it: left_shift) cout << it << " ";
+    cout << '\n';
+for (auto it: right_shift) cout << it << " ";
+    cout << '\n';
+Input: 
+5 21
+1 2 3 4 5
+Output:
+left -> 2 3 4 5 1 
+right -> 5 1 2 3 4
+```
+
 ### Co-ordinate Compression
 ```c++
 int n; cin >> n;
