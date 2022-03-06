@@ -55,6 +55,16 @@
 
 
 ### Miscellaneous
-- [Rotation of Matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
+#### Array
+- [Shift left and right $k$ position](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#shift-left-and-right)
+- [Co-ordinate Compression](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#co-ordinate-compression)
+- [Local Maxima - Minima](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#local-maxima---minima)
 - [Nearest non-zero value in circular array](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#nearest-non-zero-value-in-circular-array)
 - [next greater element in an array](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#next-greater-element-in-an-array)
+- [Count pairs in array whose sum is divisible by K](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#count-pairs-in-array-whose-sum-is-divisible-by-k)
+- [Count Subarray Sums Divisible by K](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#count-subarray-sums-divisible-by-k-httpsleetcodecomproblemssubarray-sums-divisible-by-k)
+- [Subset with no pair sum divisible by K](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#subset-with-no-pair-sum-divisible-by-k)
+
+
+#### Matrix
+- [Rotation of matrix](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Miscellaneous).md#rotation-of-matrix)
