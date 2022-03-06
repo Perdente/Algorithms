@@ -41,7 +41,7 @@
 - [Grid DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#grid-dp)
 - [Bitmask DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#bitmask-dp)
 
-### Big_Integer
+### Strings
 - [String Operations](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md)
 
 
