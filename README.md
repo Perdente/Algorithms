@@ -42,7 +42,15 @@
 - [Bitmask DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#bitmask-dp)
 
 ### Strings
-- [String Operations](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md)
+- [is Lexicographically smaller](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#condition-for-a-string-to-be-lexicographically-smaller-than-b-string)
+- [Print lexicographically bigger](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#print-lexicographically-bigger-string)
+- [Adding big integers](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#addition-of-two-big-integer-or-strings)
+- [Subtraction of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#subtraction-of-two-big-integer-or-strings)
+- [Multiplication of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#multiplication-of-two-big-integer-or-strings)
+- [Division of a big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#division-of-a-big-integer-or-string-with-an-integer)
+- [quotient of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#find-the-quotient-of-two-big-integer-or-strings)
+- [reminder of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#find-the-reminder-of-two-big-integer-or-strings)
+- [GCD of two big integer](https://github.com/Perdente/Algorithms/blob/master/Big_Int.md#gcd-of-two-big-integer-or-strings)
 
 
 ### Miscellaneous
