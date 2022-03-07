@@ -958,7 +958,7 @@ cout<<dp[n][m]<<'\n';
 </details>
 
 # Grid DP
-> Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+> 1. Given a $m$ x $n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
   
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/kHZXqcz/minpath.jpg" alt="minpath" border="0"></a>
 <details>
@@ -986,7 +986,7 @@ int minPathSum(vector<vector<int>>& grid) {
 </ul>
 </details>
 
-> Consider an $n$×$m$ grid whose squares may have traps $#$ .Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
+> 2. Consider an $n$×$m$ grid whose squares may have traps _#_ .Your task is to calculate the number of paths from the upper-left square to the lower-right square. You can only move right or down.
 <details>
 <summary>iterative</summary>
 <ul>
@@ -1052,7 +1052,7 @@ void malena() {
 </ul>
 </details>
 
-> Given an $m$ x $n$ integers matrix, return the length of the longest increasing path in matrix.From each cell, you can either move in four directions: left, right, up, or down.You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
+> 3. Given an $m$ x $n$ integers matrix, return the length of the longest increasing path in matrix.From each cell, you can either move in four directions: left, right, up, or down.You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
   
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/gtB3JRS/grid1.jpg" alt="grid1" border="0"></a>
 
@@ -1096,14 +1096,41 @@ return ans;
 </ul>
 </details>
 
+> 4. Given a matrix $Mat$ with $n$ rows and $m$ columns. Print maximum sum from $Mat[1,1]$ to $Mat[n][m]$ and main challange is $(-10^5 <= A_i <= 10^5)$
  
+[ref](https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/X)
+
+<details>
+<summary>Code</summary>
+<ul>
+
+```c++
+const int oo = 1e12;
+int n, m; cin >> n >> m;
+int a[n + 1][m + 1], dp[n + 1][m + 1];
+memset(dp, 0, sizeof dp);
+for (int i = 0; i <= n; ++i) dp[i][0] = -oo;
+for (int j = 0; j <= m; ++j) dp[0][j] = -oo;
+
+for (int i = 1; i <= n; ++i) {
+	for (int j = 1; j <= m; ++j) {
+	    cin >> a[i][j];
+	    int temp = max(dp[i - 1][j], dp[i][j - 1]);
+	    dp[i][j] = a[i][j] + (temp != -oo ? temp : 0);
+	}
+}
+cout << dp[n][m] << '\n';
+```
   
+</ul>
+</details>
+
   
  # Bitmask DP
   
   > Add, remove and display the bits using bitmasking.
   
-  <details>
+<details>
 <summary>Code</summary>
 <ul>
 
