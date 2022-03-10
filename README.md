@@ -21,6 +21,7 @@
 - [Binary Exponentiation,$n^p$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#binary-exponentiation "calculate a^b with mod or without")
 - [Binary Coefficient,$nCr$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#binary-coefficient "calculate nCr with mod or without")
 - [Modular Arithmetic](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#modular-arithmetic)
+- [First and Last $m$ digits of $n ^ m$](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#first-and-last-m-digits-of-n--m)
 - [Special Problem](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#special-problem)
 
 ### Graph & Tree
