@@ -350,6 +350,24 @@ int moddiv( int a, int b, int n) {
 }
 
 ```
+> MUL-MOD (When your (a * b) % mod even can't fit in LONG LONG)
+```c++
+// https://www.spoj.com/problems/FACTMUL/
+int mulmod (int a, int b, int mod) {
+    int res = 0;
+    a %= mod;
+    while (b) {
+        if (b & 1) {
+            res = (res + a) % mod;
+        }
+        a = (a + a) % mod;
+        b >>= 1;
+    }
+    return res % mod;
+}
+
+```
+
 
 ### Special Problem
 ```c++
