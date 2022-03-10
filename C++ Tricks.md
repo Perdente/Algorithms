@@ -2,6 +2,12 @@ Copied from https://github.com/the-hyp0cr1t3/CC/blob/master/C%2B%2B%20Tips%20and
 
 # C++ Tips and Tricks
 
+```
+int                     -32767 to               +32767 representable in 16 bits
+long               -2147483647 to          +2147483647 representable in 32 bits
+long long -9223372036854775807 to +9223372036854775807 representable in 64 bits
+```
+
 Here are some neat tricks I've come across through my experience with CP and C++ in general. The inspiration to write this came from [here](https://codeforces.com/blog/entry/74684).
  
 ### Global variable initialization
