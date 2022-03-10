@@ -370,6 +370,7 @@ int mulmod (int a, int b, int mod) {
 ### First and Last $m$ digits of $n ^ m$
 ```c++
 // https://vjudge.net/contest/473032#problem/L
+// https://www.geeksforgeeks.org/find-the-first-and-last-m-digits-from-k-th-power-of-n/
 int firstMDigits(int n,int k, int m) {
     long double y = (double) k * log10(n * 1.0);
     y = y - (int)y;
