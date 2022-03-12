@@ -504,6 +504,52 @@ for(int i=1;i<=n;++i){
 }
 cout<<dp[n][sum]<<'\n';
 ```  
+> recursive (with coin print)
+
+```c++
+// https://leetcode.com/problems/combination-sum/
+const int N = 1e6 + 5, mod = 1e9 + 7;
+int n, ans;
+int dp[N];
+vector<vector<int>> vec;
+vector<int> temp;
+
+void rec(int i, int arr[], int sum) {
+    if (sum == 0) {
+        vec.push_back(temp);
+        return;
+    }
+    if (i == n or sum < 0) return;
+    rec(i + 1, arr, sum);
+    temp.push_back(arr[i]);
+    rec(i, arr, sum - arr[i]);
+    temp.pop_back();
+}
+
+void malena() {
+    cin >> n;
+    int sum; cin >> sum;
+    int coins[n];
+    memset(dp, -1, sizeof dp);
+    for (int i = 0; i < n; ++i) cin >> coins[i];
+    rec(0, coins, sum);
+    for (auto it: vec) {
+        for (auto v: it) cout << v << " ";
+        cout << '\n';
+    }
+}
+/*
+Input: 
+3 9
+2 3 5
+Output:
+3 3 3 
+2 2 5 
+2 2 2 3 
+
+*/
+
+```
 </ul>
 </details>
 
