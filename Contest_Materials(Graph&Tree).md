@@ -140,7 +140,7 @@ for(int i=1;i<=n;++i){
   }
 }
 ```
-### Cycle Detection
+### Cycle Detection (undirectedGraph)
 ```c++
 vector<int> adj[n+1];
 vector<bool> vis(n+1);
@@ -169,6 +169,11 @@ for(int i=1 ;i<=n;++i){
 	}
 }
 ```
+### Cycle Detection (directedGraph)
+```c++
+
+```
+
 ## BFS
 ### single sourse shortest distance (https://vjudge.net/contest/475737#problem/G)
 ```c++
