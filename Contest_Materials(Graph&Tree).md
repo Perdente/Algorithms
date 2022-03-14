@@ -172,6 +172,7 @@ for(int i=1 ;i<=n;++i){
 ### Cycle Detection (directedGraph)
 ```c++
 // https://www.youtube.com/watch?v=uzVUw90ZFIg
+// https://leetcode.com/problems/course-schedule/
 const int N = 1e5 + 5;
 vector<int> g[N];
 vector<bool> vis(N), dfsVis(N);
