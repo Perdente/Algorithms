@@ -171,7 +171,38 @@ for(int i=1 ;i<=n;++i){
 ```
 ### Cycle Detection (directedGraph)
 ```c++
+// https://www.youtube.com/watch?v=uzVUw90ZFIg
+const int N = 1e5 + 5;
+vector<int> g[N];
+vector<bool> vis(N), dfsVis(N);
 
+bool dfs(int u) {
+    vis[u] = true;
+    dfsVis[u] = true;
+    for (auto v: g[u]) {
+        if (!vis[v]) {
+            if (dfs(v)) return true;
+        } else if (dfsVis[v]) {
+            return true;
+        }
+    }
+    dfsVis[u] = false;
+    return false;
+}
+int n, m; cin >> n >> m;
+for (int i = 0; i < m; ++i) {
+    int u, v; cin >> u >> v;
+    g[u].push_back(v);
+}
+bool cycle = false;
+for (int i = 0; i < n; ++i) {
+    if (!vis[i]) {
+       if (dfs(i)) {
+          cycle = true;
+       }
+    }
+}
+cout << (cycle ? "Yes\n": "No\n");
 ```
 
 ## BFS
