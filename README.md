@@ -27,8 +27,22 @@
 
 ### Graph & Tree
 
-- [DFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dfs "Connected Components,Bipartite Coloring,Cycle Detection")
-- [BFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs "normal_bfs,bfs on grid")
+#### DFS
+- [Directed graph](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#directed-graphhttpsvjudgenetproblemaizu-alds1_11_bauthorvupc)
+- [Connected Components](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#connected-components)
+- [Bipartite Coloring](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bipartite-coloring)
+- [Cycle Detection](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#cycle-detection)
+ 
+#### BFS
+- [single sourse shortest distance](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#single-sourse-shortest-distance-httpsvjudgenetcontest475737problemg)
+- [Single source shortest path](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#single-source-shortest-path-httpscsesfiproblemsettask1667)
+- [BFS on Grid (4 directions)](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs-on-grid-4-directions)
+- [BFS On Grid (8 directions)](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bfs-on-grid-8-directions-httpsvjudgenetcontest475737problemq)
+- [Multi Source BFS](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#multi-source-bfshttpswwwcodechefcomproblemssnsocial)
+- [Labyrinth](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#labyrinthhttpscsesfiproblemsettask1193)
+- [Lava Flow](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#lava-flowhttpscsesfiproblemsettask1194)
+
+#### Miscellaneous 
 - [Dijsktra's Algorithm](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#dijsktras-algorithm "shortest path")
 - [TopSort](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#topsort "Khan's algo")
 - [Tree](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#tree "Subordinate of nodes,Tree Diameter,LCA(binary lifting)")
