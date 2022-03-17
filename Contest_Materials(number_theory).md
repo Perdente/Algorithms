@@ -1,4 +1,15 @@
 # Number Theory
+### Equations
+> **Manhatten Distance :**
+> The distance between two points measured along axes at right angles. In a plane with $p_1$ at $(x_1, y_1)$ and $p_2$ at $(x_2, y_2)$, it is
+$$|x_1 - x_2| + |y_1 - y_2|$$
+> **Euclidean Distance :**
+> The straight line distance between two points. In a plane with $p_1$ at $(x_1, y_1)$ and $p_2$ at $(x_2, y_2)$, it is 
+$$\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$$\
+> **Hamming Distance :**
+> The number of bits which differ between two binary strings. More formally, the distance between two strings $A$ and $B$ is 
+$$\sum|A_i - B_i|$$
+
 
 ### Primality Test $\mathcal{O}(sqrt(n))$
 ```C++
