@@ -11,6 +11,7 @@
 - [Meet in the Middle](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(DSA).md#meet-in-the-middle)
 
 ### Number Theory
+-[Equations](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#equations)
 - [Primality Test](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#primality-test-mathcalosqrtn "check a number is prime or not")
 - [Sieve of Eratosthenes](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#sieve-of-eratosthenes-mathcalomx-loglog-mx "calculate primes until mx")
 - [Prime Factorization](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(number_theory).md#prime-factorization-mathcalosqrtn "calculate prime factors in sqrt(n)")
