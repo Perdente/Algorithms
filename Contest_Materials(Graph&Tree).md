@@ -650,6 +650,7 @@ while(q--){
 ```
 ### TopSort
 ![](https://i0.wp.com/algorithms.tutorialhorizon.com/files/2018/03/Topological-Sort.png?ssl=1)
+[Alien dictionary](https://practice.geeksforgeeks.org/problems/alien-dictionary/1#)
 ```c++
 int n,m;cin>>n>>m;
 vector<int> adj[n+1],indegree(n+1),outdegree(n+1);
