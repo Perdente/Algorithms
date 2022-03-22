@@ -32,7 +32,7 @@
 - [Directed graph](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#directed-graphhttpsvjudgenetproblemaizu-alds1_11_bauthorvupc)
 - [Connected Components](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#connected-components)
 - [Bipartite Coloring](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#bipartite-coloring)
-- [Cycle Detection(undirected)](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#cycle-detection)
+- [Cycle Detection(undirected)](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph%26Tree).md#cycle-detection-undirectedgraph)
 - [Cycle Detection(directed)](https://github.com/Perdente/Algorithms/blob/master/Contest_Materials(Graph&Tree).md#cycle-detection-directedgraph)
  
 #### BFS
