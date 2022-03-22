@@ -109,6 +109,14 @@ for(int i=1;i<=n;++i){
 cout<<cnt<<'\n';
 ```
 ### Bipartite Coloring
+
+> Algorithm
+> - use a $color$ vector which stores $0$ or $1$ for every node which denotes oposite colors.
+> - call each time $DFS$ from any non-visited node.
+> - if the node $u$ has not been visited previously, then assign $col$ to $color[u]$ and call $DFS$ to adjacent node $v$ and change color to $col$ ^ $1$
+> - if any point $col[u] = col[v]$ then the node isn't bipartite.
+> - modify the $DFS$ function to return $bool$.  
+
 ```c++
 vector<vector<int>>graph;
 vector<int>color;
