@@ -317,7 +317,7 @@ for(int i=2;i<mx;++i)fact[i]=(fact[i-1]*1LL*i)%MOD;
 > - $(a + b)$ % mod = ($a$ % mod + $b$ % mod) % mod
 > - $(a * b)$ % mod = ($a$ % mod * $b$ % mod) % mod
 > - $(a - b)$ % mod = (($a$ - $b$) % mod + mod) % mod
-> - $(a / b)$ % mod = ($a$ % mod * $b ^ (mod-2)$ % mod) % mod
+> - $(a / b)$ % mod = ($a$ % mod * $b ^ {(mod-2)}$ % mod) % mod
 
 > Addition
 ```c++
