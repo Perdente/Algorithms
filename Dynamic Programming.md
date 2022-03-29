@@ -332,9 +332,13 @@ public:
 </ul>
 </details>
 
-# Fibonacy Numbers
-> recursive
+# Fibonacy Numbers 
+> The Fibonacci sequence is a series of numbers in which each number is the sum of the two that precede it. Starting at $0$ and $1$, the sequence looks like this: $0, 1, 1, 2, 3, 5, 8, 13, 21, 34,$ and so on forever....
 
+<details>
+<summary>Recursive</summary>
+<ul>
+    
 ```c++
 const int N = 1e5 + 5;
 int F[N];
@@ -350,9 +354,16 @@ int fibonacy(int n) {
 int n; cin >> n;
 memset(F, -1, sizeof F);
 cout << fibonacy(n) << '\n';    
+
 ```
 
-> iterative
+</ul>
+</details>
+
+<details>
+<summary>Iterative</summary>
+<ul>
+    
 ```c++
 const int N = 1e5 + 5;
 int F[N];
@@ -362,8 +373,11 @@ F[0] = 0, F[1] = 1;
 for (int i = 2; i <= n; ++i) {
     F[i] = F[i - 1] + F[i - 2];
 }
-cout << F[n] << '\n';    
+cout << F[n] << '\n';
 ```
+
+</ul>
+</details>	
 
 # Dice Combination (CSES)
 > Your task is to count the number of ways to construct sum $n$ by throwing a dice one or more times. Each throw produces an outcome between $1$ and $6$.
