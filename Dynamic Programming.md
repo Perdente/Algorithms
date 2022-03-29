@@ -895,6 +895,62 @@ cout<<Strictly_LIS(v)<<'\n';
 </ul>
 </details>
 
+
+# Longest Palindromic Subsequence
+> Given a string $s$ return longest palindromic subsequence. If string is $ADAM$ answer is $3$ as $ADA$ and $racemyfuckingcar$ answer is $7$ as $racecar$.
+
+<details>
+<summary>Code</summary>
+<ul>
+    
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long int
+#define endl '\n'
+const int N = 1e3 + 5;
+int dp[N][N];
+string s;
+int n;
+int lps_len(int i, int j) {
+    if (i > j) return 0;
+    if (dp[i][j] != -1) return dp[i][j];
+    if (s[i] == s[j]) {
+        if (i == j) return lps_len(i + 1, j - 1) + 1;
+        return lps_len(i + 1, j - 1) + 2;
+    }
+    int a = 0, b = 0;
+    a = lps_len(i + 1, j);
+    b = lps_len(i, j - 1);
+    return dp[i][j] = max(a, b);
+}
+
+void malena() {
+    getline(cin, s);
+    n = s.size();
+    memset(dp, -1, sizeof dp);
+    cout << lps_len(0, n - 1) << '\n';
+}
+
+signed main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    int t, c = 0;
+    t = 1;
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        // cout << "Case " << ++c <<": ";
+        malena();
+    }
+    return 0;
+}
+```
+
+</ul>
+</details>
+	
+	
+	
 # Edit Distance
 >The edit distance between two strings is the minimum number of operations required to transform one string into the other.
 >The allowed operations are:
