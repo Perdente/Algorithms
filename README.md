@@ -52,10 +52,12 @@
 
 ### Dynamic Programming
 - [Miscellaneous](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#basic)
+- [Fibonacy Numbers](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#fibonacy-numbers)
 - [Coin Change](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#coin-change)
 - [Knapsack](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#knapsack)
 - [Longest Common Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-common-subsequence)
 - [Longest Increasing Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-increasing-subsequence)
+- [Longest Palindromic Subsequence](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#longest-palindromic-subsequence)
 - [Edit Distance](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#edit-distance)
 - [Grid DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#grid-dp)
 - [Bitmask DP](https://github.com/Perdente/Algorithms/blob/master/Dynamic%20Programming.md#bitmask-dp)
